@@ -1,3 +1,4 @@
+package ignore;
 
 
 import org.apache.jena.rdf.model.Model;

@@ -65,8 +65,6 @@ sudo docker run -v \
   -v "$(pwd)"/example_datasets:/input \
   jena:latest \
   riot --validate /input/fmri_snakemake.jsonld
-
-  sudo docker run -it -v /home/felix/github/apache-jena-playground/example_datasets:/input jena:latest riot --validate /input/fmri_snakemake.jsonld
 ```
 
 
