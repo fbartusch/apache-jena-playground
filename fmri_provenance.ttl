@@ -1,0 +1,214 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix fmri: <https://example.com/> .
+
+
+fmri:anatomy-img1 a prov:Entity ;
+	rdfs:label "anatomy_img1" .
+
+fmri:anatomy-hdr1 a prov:Entity ;
+	rdfs:label "anatomy_hdr1" .
+
+fmri:anatomy-img2 a prov:Entity ;
+	rdfs:label "anatomy_img1" .
+
+fmri:anatomy-hdr2 a prov:Entity ;
+	rdfs:label "anatomy_hdr2" .
+
+fmri:anatomy-img3 a prov:Entity ;
+	rdfs:label "anatomy_img3" .
+
+fmri:anatomy-hdr3 a prov:Entity ;
+	rdfs:label "anatomy_hdr3" .
+
+fmri:anatomy-img4 a prov:Entity ;
+	rdfs:label "anatomy_img4" .
+
+fmri:anatomy-hdr4 a prov:Entity ;
+	rdfs:label "anatomy_hdr4" .
+
+fmri:reference-img a prov:Entity ;
+	rdfs:label "reference_img" .
+
+fmri:reference-hdr a prov:Entity ;
+	rdfs:label "reference_hdr" .
+
+fmri:warp1 a prov:Entity ;
+	rdfs:label "warp1" .
+
+fmri:warp2 a prov:Entity ;
+	rdfs:label "warp2" .
+
+fmri:warp3 a prov:Entity ;
+	rdfs:label "warp3" .
+
+fmri:warp4 a prov:Entity ;
+	rdfs:label "warp4" .
+
+fmri:resliced-img1 a prov:Entity ;
+	rdfs:label "resliced_img1" .
+
+fmri:resliced-hdr1 a prov:Entity ;
+	rdfs:label "resliced_hdr1" .
+
+fmri:resliced-img2 a prov:Entity ;
+	rdfs:label "resliced_img2" .
+
+fmri:resliced-hdr2 a prov:Entity ;
+	rdfs:label "resliced_hdr2" .
+
+fmri:resliced-img3 a prov:Entity ;
+	rdfs:label "resliced_img3" .
+
+fmri:resliced-hdr3 a prov:Entity ;
+	rdfs:label "resliced_hdr3" .
+
+fmri:resliced-img4 a prov:Entity ;
+	rdfs:label "resliced_img4" .
+
+fmri:resliced-hdr4 a prov:Entity ;
+	rdfs:label "resliced_hdr4" .
+
+fmri:atlas-hdr a prov:Entity ;
+	rdfs:label "atlas_hdr" .
+
+fmri:atlas-img a prov:Entity ;
+	rdfs:label "atlas_img" .
+
+fmri:slice-x a prov:Entity ;
+	rdfs:label "slice_x" .
+
+fmri:slice-y a prov:Entity ;
+	rdfs:label "slice_y" .
+
+fmri:slice-z a prov:Entity ;
+	rdfs:label "slice_z" .
+
+fmri:slice-x-img a prov:Entity ;
+	rdfs:label "slice_x_image" .
+
+fmri:slice-y-img a prov:Entity ;
+	rdfs:label "slice_y_image" .
+
+fmri:slice-z-img a prov:Entity ;
+	rdfs:label "slice_z_image" .
+
+fmri:align-warp1 a prov:Activity ;
+	rdfs:label "align_warp1" .
+
+fmri:align-warp2 a prov:Activity ;
+	rdfs:label "align_warp2" .
+
+fmri:align-warp3 a prov:Activity ;
+	rdfs:label "align_warp3" .
+
+fmri:align-warp4 a prov:Activity ;
+	rdfs:label "align_warp4" .
+
+fmri:reslice1 a prov:Activity ;
+	rdfs:label "reslice1" .
+
+fmri:reslice2 a prov:Activity ;
+	rdfs:label "reslice2" .
+
+fmri:reslice3 a prov:Activity ;
+	rdfs:label "reslice3" .
+
+fmri:reslice4 a prov:Activity ;
+	rdfs:label "reslice4" .
+
+fmri:softmean a prov:Activity ;
+	rdfs:label "softmean" .
+
+fmri:slicer1 a prov:Activity ;
+	rdfs:label "slicer1" .
+
+fmri:slicer2 a prov:Activity ;
+	rdfs:label "slicer2" .
+
+fmri:slicer3 a prov:Activity ;
+	rdfs:label "slicer3" .
+
+fmri:convert1 a prov:Activity ;
+	rdfs:label "convert1" .
+
+fmri:convert2 a prov:Activity ;
+	rdfs:label "convert2" .
+
+fmri:convert3 a prov:Activity ;
+	rdfs:label "convert3" .
+
+fmri:snakemake a prov:Agent ;
+	rdfs:label "snakemake" .
+
+fmri:align-warp1 prov:used fmri:anatomy-img1 , fmri:anatomy-hdr1 .
+
+fmri:align-warp2 prov:used fmri:anatomy-img2 , fmri:anatomy-hdr2 .
+
+fmri:align-warp3 prov:used fmri:anatomy-img3 , fmri:anatomy-hdr3 .
+
+fmri:align-warp4 prov:used fmri:anatomy-img4 , fmri:anatomy-hdr4 .
+
+fmri:warp1 prov:wasGeneratedBy fmri:align-warp1 .
+
+fmri:warp2 prov:wasGeneratedBy fmri:align-warp2 .
+
+fmri:warp3 prov:wasGeneratedBy fmri:align-warp3 .
+
+fmri:warp4 prov:wasGeneratedBy fmri:align-warp4 .
+
+fmri:reslice1 prov:used fmri:warp1 .
+
+fmri:reslice2 prov:used fmri:warp2 .
+
+fmri:reslice3 prov:used fmri:warp3 .
+
+fmri:reslice4 prov:used fmri:warp4 .
+
+fmri:resliced-img1 prov:wasGeneratedBy fmri:reslice1 .
+
+fmri:resliced-hdr1 prov:wasGeneratedBy fmri:reslice1 .
+
+fmri:resliced-img2 prov:wasGeneratedBy fmri:reslice2 .
+
+fmri:resliced-hdr2 prov:wasGeneratedBy fmri:reslice2 .
+
+fmri:resliced-img3 prov:wasGeneratedBy fmri:reslice3 .
+
+fmri:resliced-hdr3 prov:wasGeneratedBy fmri:reslice3 .
+
+fmri:resliced-img4 prov:wasGeneratedBy fmri:reslice4 .
+
+fmri:resliced-hdr4 prov:wasGeneratedBy fmri:reslice4 .
+
+fmri:softmean prov:used fmri:resliced-img1 , fmri:resliced-hdr1 , fmri:resliced-img2 , fmri:resliced-hdr2 , fmri:resliced-img3 , fmri:resliced-hdr3 , fmri:resliced-img4 , fmri:resliced-hdr4 .
+
+fmri:atlas-img prov:wasGeneratedBy fmri:softmean .
+
+fmri:atlas-hdr prov:wasGeneratedBy fmri:softmean .
+
+fmri:slicer1 prov:used fmri:atlas-img , fmri:atlas-hdr .
+
+fmri:slicer2 prov:used fmri:atlas-img , fmri:atlas-hdr .
+
+fmri:slicer3 prov:used fmri:atlas-img , fmri:atlas-hdr .
+
+fmri:slice-x prov:wasGeneratedBy fmri:slicer1 .
+
+fmri:slice-y prov:wasGeneratedBy fmri:slicer2 .
+
+fmri:slice-z prov:wasGeneratedBy fmri:slicer3 .
+
+fmri:convert1 prov:used fmri:slice-x .
+
+fmri:convert2 prov:used fmri:slice-y .
+
+fmri:convert3 prov:used fmri:slice-z .
+
+fmri:slice-x-img prov:wasGeneratedBy fmri:convert1 .
+
+fmri:slice-y-img prov:wasGeneratedBy fmri:convert2 .
+
+fmri:slice-z-img prov:wasGeneratedBy fmri:convert3 .

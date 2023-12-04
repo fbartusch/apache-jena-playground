@@ -1,0 +1,80 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:mfg="https://example.com/mfg#">
+  <rdf:Description rdf:about="https://example.com/mfg#Product1">
+    <mfg:Product_SKU>FB3524</mfg:Product_SKU>
+    <mfg:Product_ProductLine>Paper Machine</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>ZX-3</mfg:Product_ModelNo>
+    <mfg:Product_Manuracture_Location>Sacramento</mfg:Product_Manuracture_Location>
+    <mfg:Product_Division>Manufacturing Support</mfg:Product_Division>
+    <mfg:Product_Available>23</mfg:Product_Available>
+    <mfg:Product_ID>1</mfg:Product_ID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/mfg#Product8">
+    <mfg:Product_Manuracture_Location>Cleveland</mfg:Product_Manuracture_Location>
+    <mfg:Product_SKU>HI4554</mfg:Product_SKU>
+    <mfg:Product_ID>9</mfg:Product_ID>
+    <mfg:Product_ProductLine>Safety valve</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>SP-1234</mfg:Product_ModelNo>
+    <mfg:Product_SKU>OP5333</mfg:Product_SKU>
+    <mfg:Product_Available>14</mfg:Product_Available>
+    <mfg:Product_Division>Safety</mfg:Product_Division>
+    <mfg:Product_ID>8</mfg:Product_ID>
+    <mfg:Product_ModelNo>SPX-1234</mfg:Product_ModelNo>
+    <mfg:Product_Available>4</mfg:Product_Available>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/mfg#Product6">
+    <mfg:Product_SKU>KK3945</mfg:Product_SKU>
+    <mfg:Product_ProductLine>Active Sensor</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>B-1431</mfg:Product_ModelNo>
+    <mfg:Product_Manuracture_Location>Seoul</mfg:Product_Manuracture_Location>
+    <mfg:Product_Division>Control Engineering</mfg:Product_Division>
+    <mfg:Product_Available>0</mfg:Product_Available>
+    <mfg:Product_ID>6</mfg:Product_ID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/mfg#Product7">
+    <mfg:Product_SKU>ND5520</mfg:Product_SKU>
+    <mfg:Product_ProductLine>Monitor</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>DBB-12</mfg:Product_ModelNo>
+    <mfg:Product_Manuracture_Location>Hong Kong</mfg:Product_Manuracture_Location>
+    <mfg:Product_Division>Accessories</mfg:Product_Division>
+    <mfg:Product_Available>100</mfg:Product_Available>
+    <mfg:Product_ID>7</mfg:Product_ID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/mfg#Product4">
+    <mfg:Product_SKU>KS4520</mfg:Product_SKU>
+    <mfg:Product_ProductLine>Feedback Line</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>B-1430</mfg:Product_ModelNo>
+    <mfg:Product_Manuracture_Location>Elizabeth</mfg:Product_Manuracture_Location>
+    <mfg:Product_Division>Control Engineering</mfg:Product_Division>
+    <mfg:Product_Available>23</mfg:Product_Available>
+    <mfg:Product_ID>4</mfg:Product_ID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/mfg#Product5">
+    <mfg:Product_SKU>CL5934</mfg:Product_SKU>
+    <mfg:Product_ProductLine>Feedback Line</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>B-1430X</mfg:Product_ModelNo>
+    <mfg:Product_Manuracture_Location>Elizabeth</mfg:Product_Manuracture_Location>
+    <mfg:Product_Division>Control Engineering</mfg:Product_Division>
+    <mfg:Product_Available>14</mfg:Product_Available>
+    <mfg:Product_ID>5</mfg:Product_ID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/mfg#Product2">
+    <mfg:Product_SKU>KD5243</mfg:Product_SKU>
+    <mfg:Product_ProductLine>Paper Machine</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>ZX-3P</mfg:Product_ModelNo>
+    <mfg:Product_Manuracture_Location>Sacramento</mfg:Product_Manuracture_Location>
+    <mfg:Product_Division>Manufacturing Support</mfg:Product_Division>
+    <mfg:Product_Available>4</mfg:Product_Available>
+    <mfg:Product_ID>2</mfg:Product_ID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/mfg#Product3">
+    <mfg:Product_SKU>IL4028</mfg:Product_SKU>
+    <mfg:Product_ProductLine>Paper Machine</mfg:Product_ProductLine>
+    <mfg:Product_ModelNo>ZX-3S</mfg:Product_ModelNo>
+    <mfg:Product_Manuracture_Location>Sacramento</mfg:Product_Manuracture_Location>
+    <mfg:Product_Division>Manufacturing Support</mfg:Product_Division>
+    <mfg:Product_Available>34</mfg:Product_Available>
+    <mfg:Product_ID>3</mfg:Product_ID>
+  </rdf:Description>
+</rdf:RDF>
