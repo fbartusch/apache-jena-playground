@@ -1,0 +1,461 @@
+{
+  "@context" : [ {
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "fmri" : "https://example.com/"
+  }, "http://openprovenance.org/prov.jsonld" ],
+  "@graph" : [ {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-img1",
+    "prov:label" : [ {
+      "@value" : "anatomy_img1"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-hdr1",
+    "prov:label" : [ {
+      "@value" : "anatomy_hdr1"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-img2",
+    "prov:label" : [ {
+      "@value" : "anatomy_img1"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-hdr2",
+    "prov:label" : [ {
+      "@value" : "anatomy_hdr2"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-img3",
+    "prov:label" : [ {
+      "@value" : "anatomy_img3"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-hdr3",
+    "prov:label" : [ {
+      "@value" : "anatomy_hdr3"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-img4",
+    "prov:label" : [ {
+      "@value" : "anatomy_img4"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:anatomy-hdr4",
+    "prov:label" : [ {
+      "@value" : "anatomy_hdr4"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:reference-img",
+    "prov:label" : [ {
+      "@value" : "reference_img"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:reference-hdr",
+    "prov:label" : [ {
+      "@value" : "reference_hdr"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:warp1",
+    "prov:label" : [ {
+      "@value" : "warp1"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:warp2",
+    "prov:label" : [ {
+      "@value" : "warp2"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:warp3",
+    "prov:label" : [ {
+      "@value" : "warp3"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:warp4",
+    "prov:label" : [ {
+      "@value" : "warp4"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-img1",
+    "prov:label" : [ {
+      "@value" : "resliced_img1"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-hdr1",
+    "prov:label" : [ {
+      "@value" : "resliced_hdr1"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-img2",
+    "prov:label" : [ {
+      "@value" : "resliced_img2"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-hdr2",
+    "prov:label" : [ {
+      "@value" : "resliced_hdr2"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-img3",
+    "prov:label" : [ {
+      "@value" : "resliced_img3"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-hdr3",
+    "prov:label" : [ {
+      "@value" : "resliced_hdr3"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-img4",
+    "prov:label" : [ {
+      "@value" : "resliced_img4"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:resliced-hdr4",
+    "prov:label" : [ {
+      "@value" : "resliced_hdr4"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:atlas-hdr",
+    "prov:label" : [ {
+      "@value" : "atlas_hdr"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:atlas-img",
+    "prov:label" : [ {
+      "@value" : "atlas_img"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:slice-x",
+    "prov:label" : [ {
+      "@value" : "slice_x"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:slice-y",
+    "prov:label" : [ {
+      "@value" : "slice_y"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:slice-z",
+    "prov:label" : [ {
+      "@value" : "slice_z"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:slice-x-img",
+    "prov:label" : [ {
+      "@value" : "slice_x_image"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:slice-y-img",
+    "prov:label" : [ {
+      "@value" : "slice_y_image"
+    } ]
+  }, {
+    "@type" : "prov:Entity",
+    "@id" : "fmri:slice-z-img",
+    "prov:label" : [ {
+      "@value" : "slice_z_image"
+    } ]
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:align-warp1",
+    "startTime" : "2023-08-21T05:44:05.105+02:00",
+    "endTime" : "2023-08-21T05:44:05.361+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:align-warp2",
+    "startTime" : "2023-08-21T05:44:05.365+02:00",
+    "endTime" : "2023-08-21T05:44:05.617+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:align-warp3",
+    "startTime" : "2023-08-21T05:44:05.885+02:00",
+    "endTime" : "2023-08-21T05:44:06.137+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:align-warp4",
+    "startTime" : "2023-08-21T05:44:05.617+02:00",
+    "endTime" : "2023-08-21T05:44:05.881+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:reslice1",
+    "startTime" : "2023-08-21T05:44:07.121+02:00",
+    "endTime" : "2023-08-21T05:44:07.449+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:reslice2",
+    "startTime" : "2023-08-21T05:44:06.461+02:00",
+    "endTime" : "2023-08-21T05:44:06.793+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:reslice3",
+    "startTime" : "2023-08-21T05:44:06.137+02:00",
+    "endTime" : "2023-08-21T05:44:06.461+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:reslice4",
+    "startTime" : "2023-08-21T05:44:06.797+02:00",
+    "endTime" : "2023-08-21T05:44:07.117+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:softmean",
+    "startTime" : "2023-08-21T05:44:07.449+02:00",
+    "endTime" : "2023-08-21T05:44:08.525+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:slicer",
+    "startTime" : "2023-08-21T05:44:08.525+02:00",
+    "endTime" : "2023-08-21T05:44:10.789+02:00"
+  }, {
+    "@type" : "prov:Activity",
+    "@id" : "fmri:convert",
+    "startTime" : "2023-08-21T05:44:10.793+02:00",
+    "endTime" : "2023-08-21T05:44:10.821+02:00"
+  }, {
+    "@type" : "prov:Agent",
+    "@id" : "fmri:snakemake",
+    "prov:label" : [ {
+      "@value" : "snakemake"
+    } ]
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp1",
+    "entity" : "fmri:anatomy-img1"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp1",
+    "entity" : "fmri:anatomy-hdr1"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp2",
+    "entity" : "fmri:anatomy-img2"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp2",
+    "entity" : "fmri:anatomy-hdr2"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp3",
+    "entity" : "fmri:anatomy-img3"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp3",
+    "entity" : "fmri:anatomy-hdr3"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp4",
+    "entity" : "fmri:anatomy-img4"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp4",
+    "entity" : "fmri:anatomy-hdr4"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:warp1",
+    "activity" : "fmri:align-warp1"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:warp2",
+    "activity" : "fmri:align-warp2"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:warp3",
+    "activity" : "fmri:align-warp3"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:warp4",
+    "activity" : "fmri:align-warp4"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp1",
+    "entity" : "fmri:reference-hdr"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp1",
+    "entity" : "fmri:reference-img"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp2",
+    "entity" : "fmri:reference-hdr"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp2",
+    "entity" : "fmri:reference-img"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp3",
+    "entity" : "fmri:reference-hdr"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp3",
+    "entity" : "fmri:reference-img"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp4",
+    "entity" : "fmri:reference-hdr"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:align-warp4",
+    "entity" : "fmri:reference-img"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:reslice1",
+    "entity" : "fmri:warp1"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:reslice2",
+    "entity" : "fmri:warp2"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:reslice3",
+    "entity" : "fmri:warp3"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:reslice4",
+    "entity" : "fmri:warp4"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-img1",
+    "activity" : "fmri:reslice1"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-hdr1",
+    "activity" : "fmri:reslice1"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-img2",
+    "activity" : "fmri:reslice2"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-hdr2",
+    "activity" : "fmri:reslice2"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-img3",
+    "activity" : "fmri:reslice3"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-hdr3",
+    "activity" : "fmri:reslice3"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-img4",
+    "activity" : "fmri:reslice4"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:resliced-hdr4",
+    "activity" : "fmri:reslice4"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-img1"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-hdr1"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-img2"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-hdr2"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-img3"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-hdr3"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-img4"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:softmean",
+    "entity" : "fmri:resliced-hdr4"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:atlas-img",
+    "activity" : "fmri:softmean"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:atlas-hdr",
+    "activity" : "fmri:softmean"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:slicer",
+    "entity" : "fmri:atlas-img"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:slicer",
+    "entity" : "fmri:atlas-hdr"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:slice-x",
+    "activity" : "fmri:slicer"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:slice-y",
+    "activity" : "fmri:slicer"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:slice-z",
+    "activity" : "fmri:slicer"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:convert",
+    "entity" : "fmri:slice-x"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:convert",
+    "entity" : "fmri:slice-y"
+  }, {
+    "@type" : "prov:Usage",
+    "activity" : "fmri:convert",
+    "entity" : "fmri:slice-z"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:slice-x-img",
+    "activity" : "fmri:convert"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:slice-y-img",
+    "activity" : "fmri:convert"
+  }, {
+    "@type" : "prov:Generation",
+    "entity" : "fmri:slice-z-img",
+    "activity" : "fmri:convert"
+  } ]
+}

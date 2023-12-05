@@ -1,0 +1,543 @@
+<document xmlns="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fmri="https://example.com/">
+  
+    
+      <entity prov:id="fmri:anatomy-img1">
+        <label xsi:type="xsd:string">anatomy_img1</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:anatomy-hdr1">
+        <label xsi:type="xsd:string">anatomy_hdr1</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:anatomy-img2">
+        <label xsi:type="xsd:string">anatomy_img1</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:anatomy-hdr2">
+        <label xsi:type="xsd:string">anatomy_hdr2</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:anatomy-img3">
+        <label xsi:type="xsd:string">anatomy_img3</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:anatomy-hdr3">
+        <label xsi:type="xsd:string">anatomy_hdr3</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:anatomy-img4">
+        <label xsi:type="xsd:string">anatomy_img4</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:anatomy-hdr4">
+        <label xsi:type="xsd:string">anatomy_hdr4</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:reference-img">
+        <label xsi:type="xsd:string">reference_img</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:reference-hdr">
+        <label xsi:type="xsd:string">reference_hdr</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:warp1">
+        <label xsi:type="xsd:string">warp1</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:warp2">
+        <label xsi:type="xsd:string">warp2</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:warp3">
+        <label xsi:type="xsd:string">warp3</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:warp4">
+        <label xsi:type="xsd:string">warp4</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-img1">
+        <label xsi:type="xsd:string">resliced_img1</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-hdr1">
+        <label xsi:type="xsd:string">resliced_hdr1</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-img2">
+        <label xsi:type="xsd:string">resliced_img2</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-hdr2">
+        <label xsi:type="xsd:string">resliced_hdr2</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-img3">
+        <label xsi:type="xsd:string">resliced_img3</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-hdr3">
+        <label xsi:type="xsd:string">resliced_hdr3</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-img4">
+        <label xsi:type="xsd:string">resliced_img4</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:resliced-hdr4">
+        <label xsi:type="xsd:string">resliced_hdr4</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:atlas-hdr">
+        <label xsi:type="xsd:string">atlas_hdr</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:atlas-img">
+        <label xsi:type="xsd:string">atlas_img</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:slice-x">
+        <label xsi:type="xsd:string">slice_x</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:slice-y">
+        <label xsi:type="xsd:string">slice_y</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:slice-z">
+        <label xsi:type="xsd:string">slice_z</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:slice-x-img">
+        <label xsi:type="xsd:string">slice_x_image</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:slice-y-img">
+        <label xsi:type="xsd:string">slice_y_image</label>
+      </entity>
+    
+    
+      <entity prov:id="fmri:slice-z-img">
+        <label xsi:type="xsd:string">slice_z_image</label>
+      </entity>
+    
+    
+      <activity prov:id="fmri:align-warp1">
+        <startTime>2023-08-21T05:44:05.105+02:00</startTime>
+        <endTime>2023-08-21T05:44:05.361+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:align-warp2">
+        <startTime>2023-08-21T05:44:05.365+02:00</startTime>
+        <endTime>2023-08-21T05:44:05.617+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:align-warp3">
+        <startTime>2023-08-21T05:44:05.885+02:00</startTime>
+        <endTime>2023-08-21T05:44:06.137+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:align-warp4">
+        <startTime>2023-08-21T05:44:05.617+02:00</startTime>
+        <endTime>2023-08-21T05:44:05.881+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:reslice1">
+        <startTime>2023-08-21T05:44:07.121+02:00</startTime>
+        <endTime>2023-08-21T05:44:07.449+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:reslice2">
+        <startTime>2023-08-21T05:44:06.461+02:00</startTime>
+        <endTime>2023-08-21T05:44:06.793+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:reslice3">
+        <startTime>2023-08-21T05:44:06.137+02:00</startTime>
+        <endTime>2023-08-21T05:44:06.461+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:reslice4">
+        <startTime>2023-08-21T05:44:06.797+02:00</startTime>
+        <endTime>2023-08-21T05:44:07.117+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:softmean">
+        <startTime>2023-08-21T05:44:07.449+02:00</startTime>
+        <endTime>2023-08-21T05:44:08.525+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:slicer">
+        <startTime>2023-08-21T05:44:08.525+02:00</startTime>
+        <endTime>2023-08-21T05:44:10.789+02:00</endTime>
+      </activity>
+    
+    
+      <activity prov:id="fmri:convert">
+        <startTime>2023-08-21T05:44:10.793+02:00</startTime>
+        <endTime>2023-08-21T05:44:10.821+02:00</endTime>
+      </activity>
+    
+    
+      <agent prov:id="fmri:snakemake">
+        <label xsi:type="xsd:string">snakemake</label>
+      </agent>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp1"/>
+        <entity prov:ref="fmri:anatomy-img1"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp1"/>
+        <entity prov:ref="fmri:anatomy-hdr1"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp2"/>
+        <entity prov:ref="fmri:anatomy-img2"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp2"/>
+        <entity prov:ref="fmri:anatomy-hdr2"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp3"/>
+        <entity prov:ref="fmri:anatomy-img3"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp3"/>
+        <entity prov:ref="fmri:anatomy-hdr3"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp4"/>
+        <entity prov:ref="fmri:anatomy-img4"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp4"/>
+        <entity prov:ref="fmri:anatomy-hdr4"/>
+      </used>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:warp1"/>
+        <activity prov:ref="fmri:align-warp1"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:warp2"/>
+        <activity prov:ref="fmri:align-warp2"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:warp3"/>
+        <activity prov:ref="fmri:align-warp3"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:warp4"/>
+        <activity prov:ref="fmri:align-warp4"/>
+      </wasGeneratedBy>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp1"/>
+        <entity prov:ref="fmri:reference-hdr"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp1"/>
+        <entity prov:ref="fmri:reference-img"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp2"/>
+        <entity prov:ref="fmri:reference-hdr"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp2"/>
+        <entity prov:ref="fmri:reference-img"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp3"/>
+        <entity prov:ref="fmri:reference-hdr"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp3"/>
+        <entity prov:ref="fmri:reference-img"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp4"/>
+        <entity prov:ref="fmri:reference-hdr"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:align-warp4"/>
+        <entity prov:ref="fmri:reference-img"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:reslice1"/>
+        <entity prov:ref="fmri:warp1"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:reslice2"/>
+        <entity prov:ref="fmri:warp2"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:reslice3"/>
+        <entity prov:ref="fmri:warp3"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:reslice4"/>
+        <entity prov:ref="fmri:warp4"/>
+      </used>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-img1"/>
+        <activity prov:ref="fmri:reslice1"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-hdr1"/>
+        <activity prov:ref="fmri:reslice1"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-img2"/>
+        <activity prov:ref="fmri:reslice2"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-hdr2"/>
+        <activity prov:ref="fmri:reslice2"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-img3"/>
+        <activity prov:ref="fmri:reslice3"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-hdr3"/>
+        <activity prov:ref="fmri:reslice3"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-img4"/>
+        <activity prov:ref="fmri:reslice4"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:resliced-hdr4"/>
+        <activity prov:ref="fmri:reslice4"/>
+      </wasGeneratedBy>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-img1"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-hdr1"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-img2"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-hdr2"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-img3"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-hdr3"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-img4"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:softmean"/>
+        <entity prov:ref="fmri:resliced-hdr4"/>
+      </used>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:atlas-img"/>
+        <activity prov:ref="fmri:softmean"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:atlas-hdr"/>
+        <activity prov:ref="fmri:softmean"/>
+      </wasGeneratedBy>
+    
+    
+      <used>
+        <activity prov:ref="fmri:slicer"/>
+        <entity prov:ref="fmri:atlas-img"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:slicer"/>
+        <entity prov:ref="fmri:atlas-hdr"/>
+      </used>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:slice-x"/>
+        <activity prov:ref="fmri:slicer"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:slice-y"/>
+        <activity prov:ref="fmri:slicer"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:slice-z"/>
+        <activity prov:ref="fmri:slicer"/>
+      </wasGeneratedBy>
+    
+    
+      <used>
+        <activity prov:ref="fmri:convert"/>
+        <entity prov:ref="fmri:slice-x"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:convert"/>
+        <entity prov:ref="fmri:slice-y"/>
+      </used>
+    
+    
+      <used>
+        <activity prov:ref="fmri:convert"/>
+        <entity prov:ref="fmri:slice-z"/>
+      </used>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:slice-x-img"/>
+        <activity prov:ref="fmri:convert"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:slice-y-img"/>
+        <activity prov:ref="fmri:convert"/>
+      </wasGeneratedBy>
+    
+    
+      <wasGeneratedBy>
+        <entity prov:ref="fmri:slice-z-img"/>
+        <activity prov:ref="fmri:convert"/>
+      </wasGeneratedBy>
+    
+  
+</document>
