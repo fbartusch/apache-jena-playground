@@ -82,9 +82,70 @@ sudo docker run \
 
 ### Converting
 
-Conversion from one format to the other
+`riot` can convert RDF serialization formats.
+This command generates N-Triples from a Turtle file.
 
-TODO
+```
+sudo docker run \
+  -it \
+  -v "$(pwd)"/example_datasets:/input \
+  jena:latest \
+  riot --output=N-Triples /input/ProvToolbox_playground/fmri_provenance.ttl
+```
+
+### Inference
+
+`riot` supports creation of inferred triples during the parsing process.
+Output will contain the base data and triples inferred based on RDF subclass, subproperty, domain and range declarations.
+
+We take the PROV onthology and our example data from ProvToolbox as example:
+The onthology has to be in RDF/XML format. The filename has to end with `.rdf`.
+
+```
+ wget http://www.w3.org/ns/prov.owl
+ mv prov.owl prov.rdf
+```
+
+Now we can use he onthology for inference:
+
+```
+sudo docker run \
+  -it \
+  -v "$(pwd)"/example_datasets:/input \
+  jena:latest \
+  riot --rdfs=/input/onthologies/prov.rdf /input/ProvToolbox_playground/fmri_provenance.ttl
+```
+
+These statements are present in `fmri_provenance.ttl`:
+
+```
+fmri:warp1 a prov:Entity ;
+	rdfs:label "warp1" .
+fmri:align-warp4 a prov:Activity ;
+	rdfs:label "align_warp4" .
+fmri:warp4 prov:wasGeneratedBy fmri:align-warp4 .
+```
+
+The PROV onthology defines the Property `wasGeneratedBy` as:
+
+```
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+        <rdfs:label>wasGeneratedBy</rdfs:label>
+        <inverse>generated</inverse>
+[...]
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+[...]
+    </owl:ObjectProperty>
+```
+
+The above `riot` command outputs the inferred triples:
+
+```
+<https://example.com/warp4> <http://www.w3.org/ns/prov#wasInfluencedBy> <https://example.com/align-warp4> .
+```
+
+`riot` infers subproperties. As `wasGeneratedBy` is a subproperty of `wasInfluenceBy`, this triple is inferred.
+There are other inference engines that can infer more triples. You may notice that the reverse property `generated` is not inferred, because `riot` does not infer inverse properties.
 
 
 ## Installation without Docker image
