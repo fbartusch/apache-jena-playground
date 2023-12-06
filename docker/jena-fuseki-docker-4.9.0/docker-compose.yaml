@@ -19,7 +19,10 @@ version: '3.0'
 services:
   fuseki:
     ## Example:
-    ## command: [ "--tdb2", "--update", "--loc", "databases/DB2", "/ds" ]
+    # Updatable
+    #command: [ "--tdb2", "--update", "--loc", "databases/DB2", "/ds" ]
+    # Read-only
+    command: [ "--loc", "databases/DB2", "/ds" ]
     build:
       context: .
       dockerfile: Dockerfile
