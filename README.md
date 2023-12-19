@@ -155,14 +155,14 @@ There are other inference engines that can infer more triples. You may notice th
 Load a TDB2 database, and expose, read-only, via Docker:
 
 ```
-cd docker/jena-fuseki-docker-4.9.0
-mkdir -p databases/DB2
+#cd docker/jena-fuseki-docker-4.9.0
+mkdir -p docker/jena-fuseki-docker-4.9.0/databases/DB2
 sudo docker run \
   -it \
   -v "$(pwd)"/example_datasets:/input \
   -v "$(pwd)"/docker/jena-fuseki-docker-4.9.0/databases:/databases \
   jena:latest \
-  tdb2.tdbloader --loc /databases/DB2 /input/ProvToolbox_playground/fmri_provenance.ttl
+  tdb2.tdbloader --loc /databases/DB2 /input/fMRI_example_full/fmri_provenance.ttl
 
 04:45:31 INFO  loader          :: Loader = LoaderPhased
 04:45:31 INFO  loader          :: Start: /input/ProvToolbox_playground/fmri_provenance.ttl
@@ -209,6 +209,85 @@ This return every stored triple:
 ```
 s-query --service http://localhost:3030/ds/query 'SELECT * {?s ?p ?o}'
 ```
+
+## More interesting Queries on the fMRI provenance data
+
+ An initial set of provenance-related queries is given below.
+
+    Find the process that led to Atlas X Graphic / everything that caused Atlas X Graphic to be as it is. This should tell us the new brain images from which the averaged atlas was generated, the warping performed etc.
+    Find the process that led to Atlas X Graphic, excluding everything prior to the averaging of images with softmean.
+    Find the Stage 3, 4 and 5 details of the process that led to Atlas X Graphic.
+    Find all invocations of procedure align_warp using a twelfth order nonlinear 1365 parameter model (see model menu describing possible values of parameter "-m 12" of align_warp) that ran on a Monday.
+    Find all Atlas Graphic images outputted from workflows where at least one of the input Anatomy Headers had an entry global maximum=4095. The contents of a header file can be extracted as text using the scanheader AIR utility.
+    Find all output averaged images of softmean (average) procedures, where the warped images taken as input were align_warped using a twelfth order nonlinear 1365 parameter model, i.e. "where softmean was preceded in the workflow, directly or indirectly, by an align_warp procedure with argument -m 12."
+    A user has run the workflow twice, in the second instance replacing each procedures (convert) in the final stage with two procedures: pgmtoppm, then pnmtojpeg. Find the differences between the two workflow runs. The exact level of detail in the difference that is detected by a system is up to each participant.
+    A user has annotated some anatomy images with a key-value pair center=UChicago. Find the outputs of align_warp where the inputs are annotated with center=UChicago.
+    A user has annotated some atlas graphics with key-value pair where the key is studyModality. Find all the graphical atlas sets that have metadata annotation studyModality with values speech, visual or audio, and return all other annotations to these files.
+
+
+```
+
+```
+
+
+## Provenance Queries
+
+1. Find the process that led to Atlas X Graphic / everything that caused Atlas X Graphic to be as it is. This should tell us the new brain images from which the averaged atlas was generated, the warping performed etc. 
+
+From:
+https://stackoverflow.com/questions/37186530/how-do-i-construct-get-the-whole-sub-graph-from-a-given-resource-in-rdf-graph
+```
+s-query --service http://localhost:3030/ds/query \
+    'PREFIX schema:  <https://schema.org/>
+     PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+     PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
+     PREFIX dcterms: <http://purl.org/dc/terms/>
+     PREFIX prov: <http://www.w3.org/ns/prov#>
+     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+     PREFIX fmri: <https://example.com/>
+     PREFIX scoro: <http://purl.org/spar/scoro/>
+     CONSTRUCT { ?s ?p ?o }
+     WHERE { fmri:convert-x (prov:label|!prov:label)* ?s . ?s ?p ?o . }'
+```
+
+Problem: Nothing is connected to `fmri:convert-x` except `fmri:convert-x` itself.
+Find first the execution that generated `fmri:convert-x` and then use the construct?
+
+
+Show all information about a specific file:
+
+```
+s-query --service http://localhost:3030/ds/query \
+    'PREFIX schema:  <https://schema.org/>
+     PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+     PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
+     PREFIX dcterms: <http://purl.org/dc/terms/>
+     PREFIX prov: <http://www.w3.org/ns/prov#>
+     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+     PREFIX fmri: <https://example.com/>
+     PREFIX scoro: <http://purl.org/spar/scoro/>
+     SELECT ?s ?p ?o
+     WHERE {fmri:convert-x ?p ?o .}'
+```
+
+
+
+Show ever program and its version if the information exists:
+
+```
+s-query --service http://localhost:3030/ds/query \
+    'PREFIX schema:  <https://schema.org/>
+     PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+     PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
+     PREFIX dcterms: <http://purl.org/dc/terms/>
+     PREFIX prov: <http://www.w3.org/ns/prov#>
+     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+     PREFIX fmri: <https://example.com/>
+     PREFIX scoro: <http://purl.org/spar/scoro/>
+     SELECT ?s ?o
+     WHERE {fmri:convert-x schema:softwareVersion ?o .}'
+```
+
 
 ## SPARQL Queries on RDF
 

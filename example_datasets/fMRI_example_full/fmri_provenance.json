@@ -1,0 +1,1030 @@
+{
+  "prefix" : {
+    "schema" : "https://schema.org/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "provone" : "http://purl.dataone.org/provone/2015/01/15/ontology#",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "fmri" : "https://example.com/",
+    "scoro" : "http://purl.org/spar/scoro/",
+    "_" : "https://openprovenance.org/blank#"
+  },
+  "entity" : {
+    "fmri:align-warp-m-default-param" : {
+      "prov:value" : [ "1 2" ],
+      "prov:label" : [ "align_warp_m_default_param" ]
+    },
+    "fmri:inputFileCollection" : {
+      "prov:type" : [ "Visualization Test" ],
+      "prov:label" : [ "Visualization Test" ]
+    }
+  },
+  "used" : {
+    "_:n59" : {
+      "prov:activity" : "fmri:align-warp-exe4",
+      "prov:entity" : "fmri:anatomy-hdr4"
+    },
+    "_:n64" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-img1-resliced"
+    },
+    "_:n66" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-img2-resliced"
+    },
+    "_:n71" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-hdr4-resliced"
+    },
+    "_:n54" : {
+      "prov:activity" : "fmri:align-warp-exe2",
+      "prov:entity" : "fmri:anatomy-img2"
+    },
+    "_:n76" : {
+      "prov:activity" : "fmri:convert-exe",
+      "prov:entity" : "fmri:slicer-z"
+    },
+    "_:n72" : {
+      "prov:activity" : "fmri:slicer-exe",
+      "prov:entity" : "fmri:atlas-img"
+    },
+    "_:n57" : {
+      "prov:activity" : "fmri:align-warp-exe3",
+      "prov:entity" : "fmri:anatomy-hdr3"
+    },
+    "_:n67" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-hdr2-resliced"
+    },
+    "_:n69" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-hdr3-resliced"
+    },
+    "_:n52" : {
+      "prov:activity" : "fmri:align-warp-exe1",
+      "prov:entity" : "fmri:anatomy-img1"
+    },
+    "_:n74" : {
+      "prov:activity" : "fmri:convert-exe",
+      "prov:entity" : "fmri:slicer-x"
+    },
+    "_:n62" : {
+      "prov:activity" : "fmri:reslice-exe3",
+      "prov:entity" : "fmri:warp-file3"
+    },
+    "_:n53" : {
+      "prov:activity" : "fmri:align-warp-exe1",
+      "prov:entity" : "fmri:anatomy-hdr1"
+    },
+    "_:n75" : {
+      "prov:activity" : "fmri:convert-exe",
+      "prov:entity" : "fmri:slicer-y"
+    },
+    "_:n55" : {
+      "prov:activity" : "fmri:align-warp-exe2",
+      "prov:entity" : "fmri:anatomy-hdr2"
+    },
+    "_:n60" : {
+      "prov:activity" : "fmri:reslice-exe1",
+      "prov:entity" : "fmri:warp-file1"
+    },
+    "_:n65" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-hdr1-resliced"
+    },
+    "_:n70" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-img4-resliced"
+    },
+    "_:n61" : {
+      "prov:activity" : "fmri:reslice-exe2",
+      "prov:entity" : "fmri:warp-file2"
+    },
+    "_:n68" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:entity" : "fmri:anatomy-img3-resliced"
+    },
+    "_:n56" : {
+      "prov:activity" : "fmri:align-warp-exe3",
+      "prov:entity" : "fmri:anatomy-img3"
+    },
+    "_:n58" : {
+      "prov:activity" : "fmri:align-warp-exe4",
+      "prov:entity" : "fmri:anatomy-img4"
+    },
+    "_:n63" : {
+      "prov:activity" : "fmri:reslice-exe4",
+      "prov:entity" : "fmri:warp-file4"
+    },
+    "_:n73" : {
+      "prov:activity" : "fmri:slicer-exe",
+      "prov:entity" : "fmri:atlas-hdr"
+    }
+  },
+  "wasAssociatedWith" : {
+    "_:n80" : {
+      "prov:activity" : "fmri:align-warp-exe3",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:align-warp"
+    },
+    "_:n86" : {
+      "prov:activity" : "fmri:softmean-exe",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:softmean"
+    },
+    "_:n77" : {
+      "prov:activity" : "fmri:wf-execution",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:fmri-workflow"
+    },
+    "_:n88" : {
+      "prov:activity" : "fmri:convert-exe",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:convert"
+    },
+    "_:n82" : {
+      "prov:activity" : "fmri:reslice-exe1",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:reslice"
+    },
+    "_:n87" : {
+      "prov:activity" : "fmri:slicer-exe",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:slicer"
+    },
+    "_:n81" : {
+      "prov:activity" : "fmri:align-warp-exe4",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:align-warp"
+    },
+    "_:n83" : {
+      "prov:activity" : "fmri:reslice-exe2",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:reslice"
+    },
+    "_:n79" : {
+      "prov:activity" : "fmri:align-warp-exe2",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:align-warp"
+    },
+    "_:n78" : {
+      "prov:activity" : "fmri:align-warp-exe1",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:fmri-workflow"
+    },
+    "_:n85" : {
+      "prov:activity" : "fmri:reslice-exe4",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:reslice"
+    },
+    "_:n51" : {
+      "prov:activity" : "fmri:wf-execution",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:fmri-workflow"
+    },
+    "_:n84" : {
+      "prov:activity" : "fmri:reslice-exe3",
+      "prov:agent" : "fmri:felix",
+      "prov:plan" : "fmri:reslice"
+    }
+  },
+  "hadMember" : {
+    "_:n0" : {
+      "prov:collection" : "fmri:inputFileCollection",
+      "prov:entity" : [ "fmri:anatomy-img1", "fmri:anatomy-hdr1", "fmri:anatomy-img2", "fmri:anatomy-hdr2", "fmri:anatomy-img3", "fmri:anatomy-hdr3", "fmri:anatomy-img4", "fmri:anatomy-hdr4", "fmri:reference-img", "fmri:reference-hdr" ]
+    }
+  },
+  "wasDerivedFrom" : {
+    "_:n37" : {
+      "prov:generatedEntity" : "fmri:fmri-workflow",
+      "prov:usedEntity" : "fmri:original-fmri-workflow"
+    }
+  },
+  "program" : {
+    "fmri:slicer" : {
+      "schema:citation" : [ {
+        "type" : "schema:URL",
+        "$" : "https://fsl.fmrib.ox.ac.uk/fsl/fslwiki"
+      } ],
+      "schema:softwareVersion" : [ {
+        "type" : "schema:Text",
+        "$" : "3.5.3"
+      } ],
+      "schema:applicationSuite" : [ {
+        "type" : "schema:Text",
+        "$" : "FSL"
+      } ],
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation"
+      } ],
+      "schema:comment" : [ {
+        "type" : "schema:Text",
+        "$" : "FSL Suite needs registering account before downloading. No-cost and custom license."
+      } ],
+      "prov:label" : [ "slicer" ]
+    },
+    "fmri:softmean" : {
+      "schema:citation" : [ {
+        "type" : "schema:URL",
+        "$" : "http://air.bmap.ucla.edu/AIR5/AIRrefs.html"
+      } ],
+      "schema:softwareVersion" : [ {
+        "type" : "schema:Text",
+        "$" : "5.3.0"
+      } ],
+      "schema:applicationSuite" : [ {
+        "type" : "schema:Text",
+        "$" : "AIR"
+      } ],
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "http://air.bmap.ucla.edu/AIR5/index.html"
+      } ],
+      "schema:comment" : [ {
+        "type" : "schema:Text",
+        "$" : "AIR Suite needs registering account. No-cost and custom license."
+      } ],
+      "prov:label" : [ "softmean" ]
+    },
+    "fmri:align-warp" : {
+      "schema:citation" : [ {
+        "type" : "schema:URL",
+        "$" : "http://air.bmap.ucla.edu/AIR5/AIRrefs.html"
+      } ],
+      "schema:softwareVersion" : [ {
+        "type" : "schema:Text",
+        "$" : "5.3.0"
+      } ],
+      "schema:applicationSuite" : [ {
+        "type" : "schema:Text",
+        "$" : "AIR"
+      } ],
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "http://air.bmap.ucla.edu/AIR5/index.html"
+      } ],
+      "schema:comment" : [ {
+        "type" : "schema:Text",
+        "$" : "AIR Suite needs registering account. No-cost and custom license."
+      } ],
+      "prov:label" : [ "align_warp" ]
+    },
+    "fmri:reslice" : {
+      "schema:citation" : [ {
+        "type" : "schema:URL",
+        "$" : "http://air.bmap.ucla.edu/AIR5/AIRrefs.html"
+      } ],
+      "schema:softwareVersion" : [ {
+        "type" : "schema:Text",
+        "$" : "5.3.0"
+      } ],
+      "schema:applicationSuite" : [ {
+        "type" : "schema:Text",
+        "$" : "AIR"
+      } ],
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "http://air.bmap.ucla.edu/AIR5/index.html"
+      } ],
+      "schema:comment" : [ {
+        "type" : "schema:Text",
+        "$" : "AIR Suite needs registering account. No-cost and custom license."
+      } ],
+      "prov:label" : [ "reslice" ]
+    },
+    "fmri:convert" : {
+      "schema:citation" : [ {
+        "type" : "schema:URL",
+        "$" : "ImageMagick Studio LLC. (2023). ImageMagick. Retrieved from https://imagemagick.org"
+      } ],
+      "schema:softwareVersion" : [ {
+        "type" : "schema:Text",
+        "$" : "6.9.10-23 Q16 x86_64 20190101"
+      } ],
+      "schema:applicationSuite" : [ {
+        "type" : "schema:Text",
+        "$" : "ImageMagick"
+      } ],
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "https://legacy.imagemagick.org/script/download.php"
+      } ],
+      "prov:label" : [ "convert" ]
+    }
+  },
+  "port" : {
+    "fmri:reslice-in" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Input port for warp parameters"
+      } ],
+      "prov:label" : [ "Warp parameters input" ]
+    },
+    "fmri:slicer-out" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Slicer output in pgm format"
+      } ],
+      "prov:label" : [ "Slicer output" ],
+      "schema:encodingFormat" : [ {
+        "type" : "schema:Text",
+        "$" : "image/x-portable-greymap"
+      } ]
+    },
+    "fmri:softmean-in-img" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Input port for NIfTI files: img part"
+      } ],
+      "prov:label" : [ "Softmean img input" ]
+    },
+    "fmri:softmean-in-hdr" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Input port for NIfTI files: hdr part"
+      } ],
+      "prov:label" : [ "Softmean hdr input" ]
+    },
+    "fmri:align-warp-out" : {
+      "prov:label" : [ "warp_params" ]
+    },
+    "fmri:align-warp-inPort5" : {
+      "prov:label" : [ "-m" ]
+    },
+    "fmri:align-warp-inPort3" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "NIfTI files: img part"
+      } ],
+      "prov:label" : [ "Reference Image" ]
+    },
+    "fmri:reslice-out-img" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Output for resliced NIfTI files: img part"
+      } ],
+      "prov:label" : [ "Resliced img part" ]
+    },
+    "fmri:softmean-out-img" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Output port for NIfTI files: img part"
+      } ],
+      "prov:label" : [ "Softmean img output" ]
+    },
+    "fmri:align-warp-inPort4" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "NIfTI files: hdr part"
+      } ],
+      "prov:label" : [ "Reference Header" ]
+    },
+    "fmri:convert-out" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Convert output port"
+      } ],
+      "prov:label" : [ "Coinvert output" ],
+      "schema:encodingFormat" : [ {
+        "type" : "schema:Text",
+        "$" : "image/gif"
+      } ]
+    },
+    "fmri:align-warp-inPort1" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "NIfTI files: img part"
+      } ],
+      "prov:label" : [ "Anatomy Image" ],
+      "schema:encodingFormat" : [ {
+        "type" : "schema:Text",
+        "$" : "testFormat2"
+      }, {
+        "type" : "schema:Text",
+        "$" : "testFormat1"
+      } ]
+    },
+    "fmri:slicer-in-img" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Input port for NIfTI files: img part"
+      } ],
+      "prov:label" : [ "Slicer img input" ]
+    },
+    "fmri:softmean-out-hdr" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Output port for NIfTI files: hdr part"
+      } ],
+      "prov:label" : [ "Softmean hdr output" ]
+    },
+    "fmri:convert-in" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Convert input port"
+      } ],
+      "prov:label" : [ "Convert input" ],
+      "schema:encodingFormat" : [ {
+        "type" : "schema:Text",
+        "$" : "image/x-portable-greymap"
+      } ]
+    },
+    "fmri:reslice-out-hdr" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Output for resliced NIfTI files: hdr part"
+      } ],
+      "prov:label" : [ "Resliced hdr part" ]
+    },
+    "fmri:slicer-in-hdr" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "Input port for NIfTI files: hdr part"
+      } ],
+      "prov:label" : [ "Slicer hdr input" ]
+    },
+    "fmri:align-warp-inPort2" : {
+      "schema:description" : [ {
+        "type" : "schema:Text",
+        "$" : "NIfTI files: hdr part"
+      } ],
+      "prov:label" : [ "Anatomy Header" ]
+    }
+  },
+  "channel" : {
+    "fmri:ch-resliceOutImg-softmeanInImg" : {
+      "prov:label" : [ "Channel between reslice output and softmean input for NIfTI files: img part" ]
+    },
+    "fmri:ch-resliceOutHdr-softmeanInHdr" : {
+      "prov:label" : [ "Channel between reslice output and softmean input for NIfTI files: hdr part" ]
+    },
+    "fmri:ch-softmeanOutHdr-slicerInHdr" : {
+      "prov:label" : [ "Channel between softmean output and slicer input for NIfTI files: hdr part" ]
+    },
+    "fmri:ch-slicerOut-ConvertIn" : {
+      "prov:label" : [ "Channel between slicer output and convert input." ]
+    },
+    "fmri:ch-alignWarpOut-resliceIn" : {
+      "prov:label" : [ "Channel between align_warp output and reslice input." ]
+    },
+    "fmri:ch-softmeanOutImg-slicerInImg" : {
+      "prov:label" : [ "Channel between softmean output and slicer input for NIfTI files: img part" ]
+    }
+  },
+  "controller" : {
+    "fmri:snakemake" : {
+      "schema:citation" : [ {
+        "type" : "schema:URL",
+        "$" : "https://snakemake.readthedocs.io/en/stable/project_info/citations.html"
+      } ],
+      "schema:softwareVersion" : [ {
+        "type" : "schema:Text",
+        "$" : "5.19.3"
+      } ],
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "https://snakemake.readthedocs.io/en/stable/getting_started/installation.html"
+      } ],
+      "prov:label" : [ "snakemake" ]
+    }
+  },
+  "workflow" : {
+    "fmri:original-fmri-workflow" : {
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "https://openprovenance.org/provenance-challenge/FirstProvenanceChallenge.html"
+      } ],
+      "schema:comment" : [ {
+        "type" : "schema:Text",
+        "$" : "fMRI workflow used in the Provenance Challenges"
+      } ],
+      "prov:label" : [ "fMRI workflow used in the Provenance Challenges" ]
+    },
+    "fmri:fmri-workflow" : {
+      "schema:downloadUrl" : [ {
+        "type" : "schema:URL",
+        "$" : "https://github.com/fbartusch/fMRI_snakemake"
+      } ],
+      "schema:comment" : [ {
+        "type" : "schema:Text",
+        "$" : "Implemenation of fMRI workflow used in the Provenance Challenges with Snakemake."
+      } ],
+      "prov:label" : [ "fMRI workflow" ]
+    }
+  },
+  "hasSubProgram" : {
+    "_:n35" : {
+      "parent" : "fmri:fmri-workflow",
+      "child" : "fmri:convert"
+    },
+    "_:n34" : {
+      "parent" : "fmri:fmri-workflow",
+      "child" : "fmri:slicer"
+    },
+    "_:n31" : {
+      "parent" : "fmri:fmri-workflow",
+      "child" : "fmri:align-warp"
+    },
+    "_:n33" : {
+      "parent" : "fmri:fmri-workflow",
+      "child" : "fmri:softmean"
+    },
+    "_:n32" : {
+      "parent" : "fmri:fmri-workflow",
+      "child" : "fmri:reslice"
+    }
+  },
+  "controlledBy" : {
+    "_:n39" : {
+      "provone:program" : "fmri:fmri-workflow",
+      "provone:controller" : "fmri:snakemake"
+    }
+  },
+  "controls" : {
+    "_:n38" : {
+      "provone:controller" : "fmri:snakemake",
+      "provone:program" : "fmri:fmri-workflow"
+    }
+  },
+  "hasInPort" : {
+    "_:n2" : {
+      "provone:program" : "fmri:align-warp",
+      "provone:port" : "fmri:align-warp-inPort2"
+    },
+    "_:n5" : {
+      "provone:program" : "fmri:align-warp",
+      "provone:port" : "fmri:align-warp-inPort5"
+    },
+    "_:n15" : {
+      "provone:program" : "fmri:slicer",
+      "provone:port" : "fmri:slicer-in-hdr"
+    },
+    "_:n14" : {
+      "provone:program" : "fmri:slicer",
+      "provone:port" : "fmri:slicer-in-img"
+    },
+    "_:n3" : {
+      "provone:program" : "fmri:align-warp",
+      "provone:port" : "fmri:align-warp-inPort3"
+    },
+    "_:n11" : {
+      "provone:program" : "fmri:softmean",
+      "provone:port" : "fmri:softmean-in-hdr"
+    },
+    "_:n4" : {
+      "provone:program" : "fmri:align-warp",
+      "provone:port" : "fmri:align-warp-inPort4"
+    },
+    "_:n10" : {
+      "provone:program" : "fmri:softmean",
+      "provone:port" : "fmri:softmean-in-img"
+    },
+    "_:n7" : {
+      "provone:program" : "fmri:reslice",
+      "provone:port" : "fmri:reslice-in"
+    },
+    "_:n1" : {
+      "provone:program" : "fmri:align-warp",
+      "provone:port" : "fmri:align-warp-inPort1"
+    },
+    "_:n17" : {
+      "provone:program" : "fmri:convert",
+      "provone:port" : "fmri:convert-in"
+    }
+  },
+  "hasOutPort" : {
+    "_:n8" : {
+      "provone:program" : "fmri:reslice",
+      "provone:port" : "fmri:reslice-out-img"
+    },
+    "_:n16" : {
+      "provone:program" : "fmri:slicer",
+      "provone:port" : "fmri:slicer-out"
+    },
+    "_:n13" : {
+      "provone:program" : "fmri:softmean",
+      "provone:port" : "fmri:softmean-out-hdr"
+    },
+    "_:n18" : {
+      "provone:program" : "fmri:convert",
+      "provone:port" : "fmri:convert-out"
+    },
+    "_:n6" : {
+      "provone:program" : "fmri:align-warp",
+      "provone:port" : "fmri:align-warp-out"
+    },
+    "_:n12" : {
+      "provone:program" : "fmri:softmean",
+      "provone:port" : "fmri:softmean-out-img"
+    },
+    "_:n9" : {
+      "provone:program" : "fmri:reslice",
+      "provone:port" : "fmri:reslice-out-hdr"
+    }
+  },
+  "hasDefaultParam" : {
+    "_:n36" : {
+      "provone:port" : "fmri:align-warp-inPort5",
+      "prov:entity" : "fmri:align-warp-m-default-param"
+    }
+  },
+  "connectsTo" : {
+    "_:n19" : {
+      "provone:port" : "fmri:align-warp-out",
+      "provone:channel" : "fmri:ch-alignWarpOut-resliceIn"
+    },
+    "_:n27" : {
+      "provone:port" : "fmri:softmean-out-hdr",
+      "provone:channel" : "fmri:ch-softmeanOutHdr-slicerInHdr"
+    },
+    "_:n24" : {
+      "provone:port" : "fmri:softmean-in-hdr",
+      "provone:channel" : "fmri:ch-resliceOutHdr-softmeanInHdr"
+    },
+    "_:n29" : {
+      "provone:port" : "fmri:slicer-out",
+      "provone:channel" : "fmri:ch-slicerOut-ConvertIn"
+    },
+    "_:n26" : {
+      "provone:port" : "fmri:slicer-in-img",
+      "provone:channel" : "fmri:ch-softmeanOutImg-slicerInImg"
+    },
+    "_:n23" : {
+      "provone:port" : "fmri:reslice-out-hdr",
+      "provone:channel" : "fmri:ch-resliceOutHdr-softmeanInHdr"
+    },
+    "_:n20" : {
+      "provone:port" : "fmri:reslice-in",
+      "provone:channel" : "fmri:ch-alignWarpOut-resliceIn"
+    },
+    "_:n25" : {
+      "provone:port" : "fmri:softmean-out-img",
+      "provone:channel" : "fmri:ch-softmeanOutImg-slicerInImg"
+    },
+    "_:n22" : {
+      "provone:port" : "fmri:softmean-in-img",
+      "provone:channel" : "fmri:ch-resliceOutImg-softmeanInImg"
+    },
+    "_:n30" : {
+      "provone:port" : "fmri:convert-in",
+      "provone:channel" : "fmri:ch-slicerOut-ConvertIn"
+    },
+    "_:n21" : {
+      "provone:port" : "fmri:reslice-out-img",
+      "provone:channel" : "fmri:ch-resliceOutImg-softmeanInImg"
+    },
+    "_:n28" : {
+      "provone:port" : "fmri:slicer-in-hdr",
+      "provone:channel" : "fmri:ch-softmeanOutHdr-slicerInHdr"
+    }
+  },
+  "execution" : {
+    "fmri:reslice-exe4" : {
+      "prov:startTime" : "2023-08-21T05:44:06.797+02:00",
+      "prov:endTime" : "2023-08-21T05:44:07.117+02:00",
+      "prov:label" : [ "reslice_execution_4" ]
+    },
+    "fmri:align-warp-exe4" : {
+      "prov:startTime" : "2023-08-21T05:44:05.617+02:00",
+      "prov:endTime" : "2023-08-21T05:44:05.881+02:00",
+      "prov:label" : [ "align_warp_execution_4" ]
+    },
+    "fmri:align-warp-exe1" : {
+      "prov:startTime" : "2023-08-21T05:44:05.105+02:00",
+      "prov:endTime" : "2023-08-21T05:44:05.361+02:00",
+      "prov:label" : [ "align_warp_execution_1" ]
+    },
+    "fmri:softmean-exe" : {
+      "prov:startTime" : "2023-08-21T05:44:07.449+02:00",
+      "prov:endTime" : "2023-08-21T05:44:08.525+02:00",
+      "prov:label" : [ "softmean_execution" ]
+    },
+    "fmri:align-warp-exe3" : {
+      "prov:startTime" : "2023-08-21T05:44:05.885+02:00",
+      "prov:endTime" : "2023-08-21T05:44:06.137+02:00",
+      "prov:label" : [ "align_warp_execution_3" ]
+    },
+    "fmri:slicer-exe" : {
+      "prov:startTime" : "2023-08-21T05:44:08.525+02:00",
+      "prov:endTime" : "2023-08-21T05:44:10.789+02:00",
+      "prov:label" : [ "slicer_execution" ]
+    },
+    "fmri:convert-exe" : {
+      "prov:startTime" : "2023-08-21T05:44:10.793+02:00",
+      "prov:endTime" : "2023-08-21T05:44:10.821+02:00",
+      "prov:label" : [ "convert execution" ]
+    },
+    "fmri:reslice-exe2" : {
+      "prov:startTime" : "2023-08-21T05:44:06.461+02:00",
+      "prov:endTime" : "2023-08-21T05:44:06.793+02:00",
+      "prov:label" : [ "reslice_execution_2" ]
+    },
+    "fmri:wf-execution" : {
+      "prov:startTime" : "2023-08-21T05:44:05.105+02:00",
+      "prov:endTime" : "2023-08-21T05:44:10.821+02:00",
+      "prov:label" : [ "workflow_execution" ]
+    },
+    "fmri:align-warp-exe2" : {
+      "prov:startTime" : "2023-08-21T05:44:05.365+02:00",
+      "prov:endTime" : "2023-08-21T05:44:05.617+02:00",
+      "prov:label" : [ "align_warp_execution_2" ]
+    },
+    "fmri:reslice-exe3" : {
+      "prov:startTime" : "2023-08-21T05:44:06.137+02:00",
+      "prov:endTime" : "2023-08-21T05:44:06.461+02:00",
+      "prov:label" : [ "reslice_execution_3" ]
+    }
+  },
+  "user" : {
+    "fmri:felix" : {
+      "foaf:homepage" : [ "https://fbartusch.github.io/" ],
+      "foaf:mbox" : [ "felix.bartusch[at]uni-tuebingen.de" ],
+      "foaf:givenName" : [ "Felix" ],
+      "foaf:familyName" : [ "Bartusch" ],
+      "prov:label" : [ "felix" ],
+      "scoro:hasORCID" : [ "0000-0003-0711-5196" ]
+    }
+  },
+  "wasPartOf" : {
+    "_:n50" : {
+      "provone:child" : "fmri:convert-exe",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n49" : {
+      "provone:child" : "fmri:slicer-exe",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n46" : {
+      "provone:child" : "fmri:reslice-exe3",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n48" : {
+      "provone:child" : "fmri:softmean-exe",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n45" : {
+      "provone:child" : "fmri:reslice-exe2",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n42" : {
+      "provone:child" : "fmri:align-warp-exe3",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n47" : {
+      "provone:child" : "fmri:reslice-exe4",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n44" : {
+      "provone:child" : "fmri:reslice-exe1",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n41" : {
+      "provone:child" : "fmri:align-warp-exe2",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n43" : {
+      "provone:child" : "fmri:align-warp-exe4",
+      "provone:parent" : "fmri:wf-execution"
+    },
+    "_:n40" : {
+      "provone:child" : "fmri:align-warp-exe1",
+      "provone:parent" : "fmri:wf-execution"
+    }
+  },
+  "data" : {
+    "fmri:anatomy-img4-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.img" ],
+      "schema:sha256" : [ "707bb33cc601979ea66a582d409cb065b56862d0b61999eee6c3ba81a3187158" ],
+      "prov:label" : [ "anatomy4_resliced.img" ]
+    },
+    "fmri:slicer-y" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/slices/atlas_y.pgm" ],
+      "schema:sha256" : [ "54c8eee603bcfd86d7816f7a5e399fb5abd434540fdfe95b2f1f81da4a0cf47c" ],
+      "prov:label" : [ "atlas_y.pgm" ]
+    },
+    "fmri:anatomy-img2-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.img" ],
+      "schema:sha256" : [ "45288258afe701bd00dc1385217efb0fcd1806eff1ad2e278c5be9b421bb8c88" ],
+      "prov:label" : [ "anatomy2_resliced.img" ]
+    },
+    "fmri:anatomy-hdr1" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy1.hdr" ],
+      "schema:sha256" : [ "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" ],
+      "prov:label" : [ "anatomy1.hdr" ]
+    },
+    "fmri:convert-y" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/slices/atlas_y.gif" ],
+      "schema:sha256" : [ "a5ab1129f701f461fb54923563cd7cab9ba4071db1073144e3d51358dafd174d" ],
+      "prov:label" : [ "atlas_y.gif" ]
+    },
+    "fmri:atlas-hdr" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/softmean/atlas.hdr" ],
+      "schema:sha256" : [ "d381e02cd28085d1996729ae2de0ca760036993f4f6783806332486462c47835" ],
+      "prov:label" : [ "atlas.hdr" ]
+    },
+    "fmri:anatomy-img2" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy2.img" ],
+      "schema:sha256" : [ "39e5c7ad3f6bca0c6f983ce6a327b480e7d6f2d0510670867923a1dce94928fd" ],
+      "prov:label" : [ "anatomy2.img" ]
+    },
+    "fmri:warp-file1" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/warp_files/anatomy1.warp" ],
+      "schema:sha256" : [ "b891d3b87bcf8ec9c4d4e9f481468e9a2acfda255e61e7f72706a3aea29db293" ],
+      "prov:label" : [ "anatomy1.warp" ]
+    },
+    "fmri:anatomy-hdr2-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.hdr" ],
+      "schema:sha256" : [ "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" ],
+      "prov:label" : [ "anatomy2_resliced.hdr" ]
+    },
+    "fmri:anatomy-hdr1-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.hdr" ],
+      "schema:sha256" : [ "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" ],
+      "prov:label" : [ "anatomy1_resliced.hdr" ]
+    },
+    "fmri:anatomy-img1-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.img" ],
+      "schema:sha256" : [ "13b391af7ffaea0f8a6752e7c9a6dfddc4f2541eefb38f712912801fb9218887" ],
+      "prov:label" : [ "anatomy1_resliced.img" ]
+    },
+    "fmri:anatomy-hdr3" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy3.hdr" ],
+      "schema:sha256" : [ "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" ],
+      "prov:label" : [ "anatomy3.hdr" ]
+    },
+    "fmri:anatomy-img4" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy4.img" ],
+      "schema:sha256" : [ "6b549bd112d865e7cfb0d4309b46987517ec7623832d78a79f2229fc6b24dddf" ],
+      "prov:label" : [ "anatomy4.img" ]
+    },
+    "fmri:reference-img" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/reference/reference.img" ],
+      "schema:sha256" : [ "fa276671709d87e7ff4907d11e89505c4d9ac37015d273c94e36202ad63b1a44" ],
+      "prov:label" : [ "reference.img" ]
+    },
+    "fmri:anatomy-hdr4-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.hdr" ],
+      "schema:sha256" : [ "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" ],
+      "prov:label" : [ "anatomy4_resliced.hdr" ]
+    },
+    "fmri:warp-file4" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/warp_files/anatomy4.warp" ],
+      "schema:sha256" : [ "5ac417afc592ce434c2b236623c5145d4daac0c0c304af1a9baa974834524d88" ],
+      "prov:label" : [ "anatomy4.warp" ]
+    },
+    "fmri:slicer-x" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/slices/atlas_x.pgm" ],
+      "schema:sha256" : [ "31499fcfc4e3100c46fb24f912cf8f3c008a36f80a277fde5e702f75e6cf38a8" ],
+      "prov:label" : [ "atlas_x.pgm" ]
+    },
+    "fmri:convert-z" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/slices/atlas_z.gif" ],
+      "schema:sha256" : [ "84f8d7c5580c15b6bf52ffe0cf8e1571041c4bc3eb4ce0978530a673d81a3828" ],
+      "prov:label" : [ "atlas_z.gif" ]
+    },
+    "fmri:anatomy-img1" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy1.img" ],
+      "schema:sha256" : [ "f4696781e18af5b34ae432f6de97f98608fdc7d16e955110ef82a3719538d226" ],
+      "prov:label" : [ "anatomy1.img" ]
+    },
+    "fmri:warp-file2" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/warp_files/anatomy2.warp" ],
+      "schema:sha256" : [ "c083a225db55828179cb92387f1fb75b963f5b013e4f762ef432030836fae7bc" ],
+      "prov:label" : [ "anatomy2.warp" ]
+    },
+    "fmri:atlas-img" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/softmean/atlas.img" ],
+      "schema:sha256" : [ "73bf1d5e1cb5cc70477bd44cc927538b61193c8cd8e246c120a58018257b0552" ],
+      "prov:label" : [ "atlas.img" ]
+    },
+    "fmri:anatomy-img3-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.img" ],
+      "schema:sha256" : [ "3184307ef781d7aad8b7d62110a39a525a96a97e61f30f762f15379cacc33def3" ],
+      "prov:label" : [ "anatomy3_resliced.img" ]
+    },
+    "fmri:slicer-z" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/slices/atlas_z.pgm" ],
+      "schema:sha256" : [ "5a5254e7c6ac1a91c76e881defe75a878ffb403f12173055afa5eb22a8e71275" ],
+      "prov:label" : [ "atlas_z.pgm" ]
+    },
+    "fmri:convert-x" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/slices/atlas_x.gif" ],
+      "schema:sha256" : [ "882fe0286e2fae0c5c1e9f3420bb7da6004a6900c96ef8f018c2c44a7c8b0a1a" ],
+      "prov:label" : [ "atlas_x.gif" ]
+    },
+    "fmri:anatomy-hdr3-resliced" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.hdr" ],
+      "schema:sha256" : [ "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" ],
+      "prov:label" : [ "anatomy3_resliced.hdr" ]
+    },
+    "fmri:warp-file3" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/results/warp_files/anatomy3.warp" ],
+      "schema:sha256" : [ "074f3ddfa1dd2b10c3736f32c716fe5a59871957c69966cd9f25d6760b5f9fea" ],
+      "prov:label" : [ "anatomy3.warp" ]
+    },
+    "fmri:anatomy-img3" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy3.img" ],
+      "schema:sha256" : [ "42869acea37b0c25e6599ca2f342c80cabceeba0d956a0cf0674a3fa406e1fc1" ],
+      "prov:label" : [ "anatomy3.img" ]
+    },
+    "fmri:anatomy-hdr4" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy4.hdr" ],
+      "schema:sha256" : [ "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" ],
+      "prov:label" : [ "anatomy4.hdr" ]
+    },
+    "fmri:anatomy-hdr2" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/samples/anatomy2.hdr" ],
+      "schema:sha256" : [ "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" ],
+      "prov:label" : [ "anatomy2.hdr" ]
+    },
+    "fmri:reference-hdr" : {
+      "schema:location" : [ "~/github/fMRI_snakemake/resources/example_input/reference/reference.hdr" ],
+      "schema:sha256" : [ "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" ],
+      "prov:label" : [ "reference.hdr" ]
+    }
+  },
+  "wasGeneratedBy" : {
+    "_:n91" : {
+      "prov:entity" : "fmri:warp-file3",
+      "prov:activity" : "fmri:align-warp-exe3"
+    },
+    "_:n108" : {
+      "prov:entity" : "fmri:convert-z",
+      "prov:activity" : "fmri:convert-exe"
+    },
+    "_:n90" : {
+      "prov:entity" : "fmri:warp-file2",
+      "prov:activity" : "fmri:align-warp-exe2"
+    },
+    "_:n107" : {
+      "prov:entity" : "fmri:convert-y",
+      "prov:activity" : "fmri:convert-exe"
+    },
+    "_:n101" : {
+      "prov:entity" : "fmri:atlas-img",
+      "prov:activity" : "fmri:softmean-exe"
+    },
+    "_:n97" : {
+      "prov:entity" : "fmri:anatomy-img3-resliced",
+      "prov:activity" : "fmri:reslice-exe3"
+    },
+    "_:n99" : {
+      "prov:entity" : "fmri:anatomy-img4-resliced",
+      "prov:activity" : "fmri:reslice-exe4"
+    },
+    "_:n106" : {
+      "prov:entity" : "fmri:convert-x",
+      "prov:activity" : "fmri:convert-exe"
+    },
+    "_:n93" : {
+      "prov:entity" : "fmri:anatomy-img1-resliced",
+      "prov:activity" : "fmri:reslice-exe1"
+    },
+    "_:n100" : {
+      "prov:entity" : "fmri:anatomy-hdr4-resliced",
+      "prov:activity" : "fmri:reslice-exe4"
+    },
+    "_:n98" : {
+      "prov:entity" : "fmri:anatomy-hdr3-resliced",
+      "prov:activity" : "fmri:reslice-exe3"
+    },
+    "_:n92" : {
+      "prov:entity" : "fmri:warp-file4",
+      "prov:activity" : "fmri:align-warp-exe4"
+    },
+    "_:n94" : {
+      "prov:entity" : "fmri:anatomy-hdr1-resliced",
+      "prov:activity" : "fmri:reslice-exe1"
+    },
+    "_:n105" : {
+      "prov:entity" : "fmri:slicer-z",
+      "prov:activity" : "fmri:slicer-exe"
+    },
+    "_:n89" : {
+      "prov:entity" : "fmri:warp-file1",
+      "prov:activity" : "fmri:align-warp-exe1"
+    },
+    "_:n104" : {
+      "prov:entity" : "fmri:slicer-y",
+      "prov:activity" : "fmri:slicer-exe"
+    },
+    "_:n103" : {
+      "prov:entity" : "fmri:slicer-x",
+      "prov:activity" : "fmri:slicer-exe"
+    },
+    "_:n96" : {
+      "prov:entity" : "fmri:anatomy-hdr2-resliced",
+      "prov:activity" : "fmri:reslice-exe2"
+    },
+    "_:n95" : {
+      "prov:entity" : "fmri:anatomy-img2-resliced",
+      "prov:activity" : "fmri:reslice-exe2"
+    },
+    "_:n102" : {
+      "prov:entity" : "fmri:atlas-hdr",
+      "prov:activity" : "fmri:softmean-exe"
+    }
+  }
+}
