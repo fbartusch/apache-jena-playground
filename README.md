@@ -96,7 +96,7 @@ riot --syntax=RDF/XML --validate example_datasets/ProvToolbox_playground/fmri_pr
 This command generates N-Triples from a Turtle file.
 
 ```
-riot --output=N-Triples example_datasets/ProvToolbox_playground/fmri_provenance.ttl
+riot --output=Turtle example_datasets/ProvToolbox_playground/fmri_provenance.ttl
 ```
 
 ### Inference

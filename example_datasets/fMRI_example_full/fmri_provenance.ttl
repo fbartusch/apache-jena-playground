@@ -7,7 +7,17 @@
 @prefix fmri: <https://example.com/> .
 @prefix scoro: <http://purl.org/spar/scoro/> .
 
-_:b0    a       prov:Membership .
+_:b0    a            prov:Membership ;
+        prov:entity  fmri:anatomy-img1 ;
+        prov:entity  fmri:anatomy-hdr1 ;
+        prov:entity  fmri:anatomy-img2 ;
+        prov:entity  fmri:anatomy-hdr2 ;
+        prov:entity  fmri:anatomy-img3 ;
+        prov:entity  fmri:anatomy-hdr3 ;
+        prov:entity  fmri:anatomy-img4 ;
+        prov:entity  fmri:anatomy-hdr4 ;
+        prov:entity  fmri:reference-img ;
+        prov:entity  fmri:reference-hdr .
 
 _:b1    a                provone:HasInPort ;
         provone:port     "fmri:align-warp-inPort1" ;
@@ -17,23 +27,41 @@ _:b2    a                provone:HasInPort ;
         provone:port     "fmri:softmean-in-img" ;
         provone:program  "fmri:softmean" .
 
-_:b3    a       prov:Generation .
+_:b3    a              prov:Generation ;
+        prov:activity  fmri:reslice-exe4 ;
+        prov:entity    fmri:anatomy-hdr4-resliced .
 
-_:b4    a       prov:Generation .
+_:b4    a              prov:Generation ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:atlas-img .
 
-_:b5    a       prov:Generation .
+_:b5    a              prov:Generation ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:atlas-hdr .
 
-_:b6    a       prov:Generation .
+_:b6    a              prov:Generation ;
+        prov:activity  fmri:slicer-exe ;
+        prov:entity    fmri:slicer-x .
 
-_:b7    a       prov:Generation .
+_:b7    a              prov:Generation ;
+        prov:activity  fmri:slicer-exe ;
+        prov:entity    fmri:slicer-y .
 
-_:b8    a       prov:Generation .
+_:b8    a              prov:Generation ;
+        prov:activity  fmri:slicer-exe ;
+        prov:entity    fmri:slicer-z .
 
-_:b9    a       prov:Generation .
+_:b9    a              prov:Generation ;
+        prov:activity  fmri:convert-exe ;
+        prov:entity    fmri:convert-x .
 
-_:b10   a       prov:Generation .
+_:b10   a              prov:Generation ;
+        prov:activity  fmri:convert-exe ;
+        prov:entity    fmri:convert-y .
 
-_:b11   a       prov:Generation .
+_:b11   a              prov:Generation ;
+        prov:activity  fmri:convert-exe ;
+        prov:entity    fmri:convert-z .
 
 _:b12   a                provone:HasInPort ;
         provone:port     "fmri:softmean-in-hdr" ;
@@ -199,119 +227,217 @@ _:b55   a               provone:WasPartOf ;
         provone:child   "fmri:convert-exe" ;
         provone:parent  "fmri:wf-execution" .
 
-_:b56   a       prov:Association .
+_:b56   a              prov:Association ;
+        prov:activity  fmri:wf-execution ;
+        prov:agent     fmri:felix .
 
-_:b57   a       prov:Usage .
+_:b57   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe1 ;
+        prov:entity    fmri:anatomy-img1 .
 
-_:b58   a       prov:Usage .
+_:b58   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe1 ;
+        prov:entity    fmri:anatomy-hdr1 .
 
-_:b59   a       prov:Usage .
+_:b59   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe2 ;
+        prov:entity    fmri:anatomy-img2 .
 
-_:b60   a       prov:Usage .
+_:b60   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe2 ;
+        prov:entity    fmri:anatomy-hdr2 .
 
-_:b61   a       prov:Usage .
+_:b61   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe3 ;
+        prov:entity    fmri:anatomy-img3 .
 
-_:b62   a       prov:Usage .
+_:b62   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe3 ;
+        prov:entity    fmri:anatomy-hdr3 .
 
-_:b63   a       prov:Usage .
+_:b63   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe4 ;
+        prov:entity    fmri:anatomy-img4 .
 
-_:b64   a       prov:Usage .
+_:b64   a              prov:Usage ;
+        prov:activity  fmri:align-warp-exe4 ;
+        prov:entity    fmri:anatomy-hdr4 .
 
 _:b65   a                provone:HasOutPort ;
         provone:port     "fmri:align-warp-out" ;
         provone:program  "fmri:align-warp" .
 
-_:b66   a       prov:Usage .
+_:b66   a              prov:Usage ;
+        prov:activity  fmri:reslice-exe1 ;
+        prov:entity    fmri:warp-file1 .
 
-_:b67   a       prov:Usage .
+_:b67   a              prov:Usage ;
+        prov:activity  fmri:reslice-exe2 ;
+        prov:entity    fmri:warp-file2 .
 
-_:b68   a       prov:Usage .
+_:b68   a              prov:Usage ;
+        prov:activity  fmri:reslice-exe3 ;
+        prov:entity    fmri:warp-file3 .
 
-_:b69   a       prov:Usage .
+_:b69   a              prov:Usage ;
+        prov:activity  fmri:reslice-exe4 ;
+        prov:entity    fmri:warp-file4 .
 
-_:b70   a       prov:Usage .
+_:b70   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-img1-resliced .
 
-_:b71   a       prov:Usage .
+_:b71   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-hdr1-resliced .
 
-_:b72   a       prov:Usage .
+_:b72   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-img2-resliced .
 
-_:b73   a       prov:Usage .
+_:b73   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-hdr2-resliced .
 
-_:b74   a       prov:Usage .
+_:b74   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-img3-resliced .
 
-_:b75   a       prov:Usage .
+_:b75   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-hdr3-resliced .
 
 _:b76   a                provone:HasInPort ;
         provone:port     "fmri:reslice-in" ;
         provone:program  "fmri:reslice" .
 
-_:b77   a       prov:Usage .
+_:b77   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-img4-resliced .
 
-_:b78   a       prov:Usage .
+_:b78   a              prov:Usage ;
+        prov:activity  fmri:softmean-exe ;
+        prov:entity    fmri:anatomy-hdr4-resliced .
 
-_:b79   a       prov:Usage .
+_:b79   a              prov:Usage ;
+        prov:activity  fmri:slicer-exe ;
+        prov:entity    fmri:atlas-img .
 
-_:b80   a       prov:Usage .
+_:b80   a              prov:Usage ;
+        prov:activity  fmri:slicer-exe ;
+        prov:entity    fmri:atlas-hdr .
 
-_:b81   a       prov:Usage .
+_:b81   a              prov:Usage ;
+        prov:activity  fmri:convert-exe ;
+        prov:entity    fmri:slicer-x .
 
-_:b82   a       prov:Usage .
+_:b82   a              prov:Usage ;
+        prov:activity  fmri:convert-exe ;
+        prov:entity    fmri:slicer-y .
 
-_:b83   a       prov:Usage .
+_:b83   a              prov:Usage ;
+        prov:activity  fmri:convert-exe ;
+        prov:entity    fmri:slicer-z .
 
-_:b84   a       prov:Association .
+_:b84   a              prov:Association ;
+        prov:activity  fmri:wf-execution ;
+        prov:agent     fmri:felix .
 
-_:b85   a       prov:Association .
+_:b85   a              prov:Association ;
+        prov:activity  fmri:align-warp-exe1 ;
+        prov:agent     fmri:felix .
 
-_:b86   a       prov:Association .
+_:b86   a              prov:Association ;
+        prov:activity  fmri:align-warp-exe2 ;
+        prov:agent     fmri:felix .
 
 _:b87   a                provone:HasOutPort ;
         provone:port     "fmri:reslice-out-img" ;
         provone:program  "fmri:reslice" .
 
-_:b88   a       prov:Association .
+_:b88   a              prov:Association ;
+        prov:activity  fmri:align-warp-exe3 ;
+        prov:agent     fmri:felix .
 
-_:b89   a       prov:Association .
+_:b89   a              prov:Association ;
+        prov:activity  fmri:align-warp-exe4 ;
+        prov:agent     fmri:felix .
 
-_:b90   a       prov:Association .
+_:b90   a              prov:Association ;
+        prov:activity  fmri:reslice-exe1 ;
+        prov:agent     fmri:felix .
 
-_:b91   a       prov:Association .
+_:b91   a              prov:Association ;
+        prov:activity  fmri:reslice-exe2 ;
+        prov:agent     fmri:felix .
 
-_:b92   a       prov:Association .
+_:b92   a              prov:Association ;
+        prov:activity  fmri:reslice-exe3 ;
+        prov:agent     fmri:felix .
 
-_:b93   a       prov:Association .
+_:b93   a              prov:Association ;
+        prov:activity  fmri:reslice-exe4 ;
+        prov:agent     fmri:felix .
 
-_:b94   a       prov:Association .
+_:b94   a              prov:Association ;
+        prov:activity  fmri:softmean-exe ;
+        prov:agent     fmri:felix .
 
-_:b95   a       prov:Association .
+_:b95   a              prov:Association ;
+        prov:activity  fmri:slicer-exe ;
+        prov:agent     fmri:felix .
 
-_:b96   a       prov:Association .
+_:b96   a              prov:Association ;
+        prov:activity  fmri:convert-exe ;
+        prov:agent     fmri:felix .
 
-_:b97   a       prov:Generation .
+_:b97   a              prov:Generation ;
+        prov:activity  fmri:align-warp-exe1 ;
+        prov:entity    fmri:warp-file1 .
 
 _:b98   a                provone:HasOutPort ;
         provone:port     "fmri:reslice-out-hdr" ;
         provone:program  "fmri:reslice" .
 
-_:b99   a       prov:Generation .
+_:b99   a              prov:Generation ;
+        prov:activity  fmri:align-warp-exe2 ;
+        prov:entity    fmri:warp-file2 .
 
-_:b100  a       prov:Generation .
+_:b100  a              prov:Generation ;
+        prov:activity  fmri:align-warp-exe3 ;
+        prov:entity    fmri:warp-file3 .
 
-_:b101  a       prov:Generation .
+_:b101  a              prov:Generation ;
+        prov:activity  fmri:align-warp-exe4 ;
+        prov:entity    fmri:warp-file4 .
 
-_:b102  a       prov:Generation .
+_:b102  a              prov:Generation ;
+        prov:activity  fmri:reslice-exe1 ;
+        prov:entity    fmri:anatomy-img1-resliced .
 
-_:b103  a       prov:Generation .
+_:b103  a              prov:Generation ;
+        prov:activity  fmri:reslice-exe1 ;
+        prov:entity    fmri:anatomy-hdr1-resliced .
 
-_:b104  a       prov:Generation .
+_:b104  a              prov:Generation ;
+        prov:activity  fmri:reslice-exe2 ;
+        prov:entity    fmri:anatomy-img2-resliced .
 
-_:b105  a       prov:Generation .
+_:b105  a              prov:Generation ;
+        prov:activity  fmri:reslice-exe2 ;
+        prov:entity    fmri:anatomy-hdr2-resliced .
 
-_:b106  a       prov:Generation .
+_:b106  a              prov:Generation ;
+        prov:activity  fmri:reslice-exe3 ;
+        prov:entity    fmri:anatomy-img3-resliced .
 
-_:b107  a       prov:Generation .
+_:b107  a              prov:Generation ;
+        prov:activity  fmri:reslice-exe3 ;
+        prov:entity    fmri:anatomy-hdr3-resliced .
 
-_:b108  a       prov:Generation .
+_:b108  a              prov:Generation ;
+        prov:activity  fmri:reslice-exe4 ;
+        prov:entity    fmri:anatomy-img4-resliced .
 
 fmri:align-warp  a               provone:Program ;
         prov:label               "align_warp" ;

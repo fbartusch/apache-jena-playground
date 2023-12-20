@@ -8,7 +8,7 @@
     "foaf" : "http://xmlns.com/foaf/0.1/",
     "fmri" : "https://example.com/",
     "scoro" : "http://purl.org/spar/scoro/"
-  } ],
+  }, "http://localhost:8000/context.jsonld" ],
   "@graph" : [ {
     "@type" : "provone:Program",
     "@id" : "fmri:align-warp",
