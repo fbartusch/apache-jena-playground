@@ -1,0 +1,537 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fmri:    <https://example.com/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix provone: <http://purl.dataone.org/provone/2015/01/15/ontology#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <https://schema.org/> .
+@prefix scoro:   <http://purl.org/spar/scoro/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+fmri:warp-file1  rdf:type         provone:Data;
+        prov:label                "anatomy1.warp";
+        prov:qualifiedGeneration  fmri:generation1;
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:align-warp-exe1
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy1.warp";
+        schema:sha256             "b891d3b87bcf8ec9c4d4e9f481468e9a2acfda255e61e7f72706a3aea29db293" .
+
+fmri:warp4  rdf:type         prov:Entity;
+        rdfs:label           "warp4";
+        prov:wasGeneratedBy  fmri:align-warp4 .
+
+fmri:anatomy-hdr4  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_hdr4";
+        prov:label       "anatomy4.hdr";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy4.hdr";
+        schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
+
+fmri:align-warp-exe4  rdf:type     provone:Execution;
+        prov:endTime               "2023-08-21T05:44:05.881+02:00";
+        prov:label                 "align_warp_execution_4";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:align-warp
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr4
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img4
+                                   ];
+        prov:startTime             "2023-08-21T05:44:05.617+02:00" .
+
+fmri:anatomy-img2-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy2_resliced.img";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe2
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.img";
+        schema:sha256             "45288258afe701bd00dc1385217efb0fcd1806eff1ad2e278c5be9b421bb8c88" .
+
+fmri:resliced-hdr2  rdf:type  prov:Entity;
+        rdfs:label           "resliced_hdr2";
+        prov:wasGeneratedBy  fmri:reslice2 .
+
+fmri:generation1  rdf:type  prov:Generation;
+        prov:activity  fmri:align-warp-exe1;
+        prov:atTime    "2023-08-21T05:44:05.361+02:00"^^xsd:dateTime;
+        prov:entity    fmri:warp-file1 .
+
+fmri:slicer-z  rdf:type           provone:Data;
+        prov:label                "atlas_z.pgm";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:slicer-exe
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_z.pgm";
+        schema:sha256             "5a5254e7c6ac1a91c76e881defe75a878ffb403f12173055afa5eb22a8e71275" .
+
+fmri:anatomy-img2  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_img1";
+        prov:label       "anatomy2.img";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy2.img";
+        schema:sha256    "39e5c7ad3f6bca0c6f983ce6a327b480e7d6f2d0510670867923a1dce94928fd" .
+
+fmri:felix  rdf:type     provone:User;
+        scoro:hasORCID   "0000-0003-0711-5196";
+        prov:label       "felix";
+        foaf:familyName  "Bartusch";
+        foaf:givenName   "Felix";
+        foaf:homepage    "https://fbartusch.github.io/";
+        foaf:mbox        "felix.bartusch[at]uni-tuebingen.de" .
+
+fmri:anatomy-hdr1-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy1_resliced.hdr";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe1
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.hdr";
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+
+fmri:warp-file2  rdf:type         provone:Data;
+        prov:label                "anatomy2.warp";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:align-warp-exe2
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy2.warp";
+        schema:sha256             "c083a225db55828179cb92387f1fb75b963f5b013e4f762ef432030836fae7bc" .
+
+fmri:softmean-exe  rdf:type        provone:Execution;
+        prov:endTime               "2023-08-21T05:44:08.525+02:00";
+        prov:label                 "softmean_execution";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:softmean
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr3-resliced
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr4-resliced
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr1-resliced
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img4-resliced
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img2-resliced
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img1-resliced
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img3-resliced
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr2-resliced
+                                   ];
+        prov:startTime             "2023-08-21T05:44:07.449+02:00" .
+
+fmri:resliced-hdr3  rdf:type  prov:Entity;
+        rdfs:label           "resliced_hdr3";
+        prov:wasGeneratedBy  fmri:reslice3 .
+
+fmri:atlas-hdr  rdf:type          provone:Data , prov:Entity;
+        rdfs:label                "atlas_hdr";
+        prov:label                "atlas.hdr";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:softmean-exe
+                                  ];
+        prov:wasGeneratedBy       fmri:softmean;
+        schema:location           "~/github/fMRI_snakemake/results/softmean/atlas.hdr";
+        schema:sha256             "d381e02cd28085d1996729ae2de0ca760036993f4f6783806332486462c47835" .
+
+fmri:anatomy-img3-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy3_resliced.img";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe3
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.img";
+        schema:sha256             "3184307ef781d7aad8b7d62110a39a525a96a97e61f30f762f15379cacc33def3" .
+
+fmri:align-warp1  rdf:type  prov:Activity;
+        rdfs:label  "align_warp1";
+        prov:used   fmri:anatomy-hdr1 , fmri:anatomy-img1 .
+
+fmri:anatomy-img3  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_img3";
+        prov:label       "anatomy3.img";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy3.img";
+        schema:sha256    "42869acea37b0c25e6599ca2f342c80cabceeba0d956a0cf0674a3fa406e1fc1" .
+
+fmri:reslice-exe1  prov:qualifiedAssociation
+                [ rdf:type      prov:Association;
+                  prov:agent    fmri:felix;
+                  prov:hadPlan  fmri:reslice
+                ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:warp-file1
+                                   ] .
+
+fmri:warp-file3  rdf:type         provone:Data;
+        prov:label                "anatomy3.warp";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:align-warp-exe3
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy3.warp";
+        schema:sha256             "074f3ddfa1dd2b10c3736f32c716fe5a59871957c69966cd9f25d6760b5f9fea" .
+
+fmri:convert-x  rdf:type          provone:Data;
+        prov:label                "atlas_x.gif";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:convert-exe
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_x.gif";
+        schema:sha256             "882fe0286e2fae0c5c1e9f3420bb7da6004a6900c96ef8f018c2c44a7c8b0a1a" .
+
+fmri:resliced-img1  rdf:type  prov:Entity;
+        rdfs:label           "resliced_img1";
+        prov:wasGeneratedBy  fmri:reslice1 .
+
+fmri:align-warp  rdf:type        provone:Program;
+        prov:label               "align_warp";
+        schema:applicationSuite  "AIR"^^schema:Text;
+        schema:citation          "http://air.bmap.ucla.edu/AIR5/AIRrefs.html"^^schema:URL;
+        schema:comment           "AIR Suite needs registering account. No-cost and custom license."^^schema:Text;
+        schema:downloadUrl       "http://air.bmap.ucla.edu/AIR5/index.html"^^schema:URL;
+        schema:softwareVersion   "5.3.0"^^schema:Text .
+
+fmri:anatomy-hdr2-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy2_resliced.hdr";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe2
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.hdr";
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+
+fmri:reslice1  rdf:type  prov:Activity;
+        rdfs:label  "reslice1";
+        prov:used   fmri:warp1 .
+
+fmri:resliced-hdr4  rdf:type  prov:Entity;
+        rdfs:label           "resliced_hdr4";
+        prov:wasGeneratedBy  fmri:reslice4 .
+
+fmri:atlas-img  rdf:type          provone:Data , prov:Entity;
+        rdfs:label                "atlas_img";
+        prov:label                "atlas.img";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:softmean-exe
+                                  ];
+        prov:wasGeneratedBy       fmri:softmean;
+        schema:location           "~/github/fMRI_snakemake/results/softmean/atlas.img";
+        schema:sha256             "73bf1d5e1cb5cc70477bd44cc927538b61193c8cd8e246c120a58018257b0552" .
+
+fmri:align-warp2  rdf:type  prov:Activity;
+        rdfs:label  "align_warp2";
+        prov:used   fmri:anatomy-hdr2 , fmri:anatomy-img2 .
+
+fmri:anatomy-img4  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_img4";
+        prov:label       "anatomy4.img";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy4.img";
+        schema:sha256    "6b549bd112d865e7cfb0d4309b46987517ec7623832d78a79f2229fc6b24dddf" .
+
+fmri:warp1  rdf:type         prov:Entity;
+        rdfs:label           "warp1";
+        prov:wasGeneratedBy  fmri:align-warp1 .
+
+fmri:anatomy-hdr1  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_hdr1";
+        prov:label       "anatomy1.hdr";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy1.hdr";
+        schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
+
+fmri:reslice-exe2  rdf:type        provone:Execution;
+        prov:endTime               "2023-08-21T05:44:06.793+02:00";
+        prov:label                 "reslice_execution_2";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:reslice
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:warp-file2
+                                   ];
+        prov:startTime             "2023-08-21T05:44:06.461+02:00" .
+
+fmri:align-warp-exe1  rdf:type     provone:Execution;
+        prov:endTime               "2023-08-21T05:44:05.361+02:00";
+        prov:label                 "align_warp_execution_1";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:fmri-workflow
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr1
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img1
+                                   ];
+        prov:startTime             "2023-08-21T05:44:05.105+02:00" .
+
+fmri:warp-file4  rdf:type         provone:Data;
+        prov:label                "anatomy4.warp";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:align-warp-exe4
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy4.warp";
+        schema:sha256             "5ac417afc592ce434c2b236623c5145d4daac0c0c304af1a9baa974834524d88" .
+
+fmri:convert-exe  rdf:type         provone:Execution;
+        prov:endTime               "2023-08-21T05:44:10.821+02:00";
+        prov:label                 "convert execution";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:convert
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:slicer-z
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:slicer-y
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:slicer-x
+                                   ];
+        prov:startTime             "2023-08-21T05:44:10.793+02:00" .
+
+fmri:anatomy-img4-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy4_resliced.img";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe4
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.img";
+        schema:sha256             "707bb33cc601979ea66a582d409cb065b56862d0b61999eee6c3ba81a3187158" .
+
+fmri:resliced-img2  rdf:type  prov:Entity;
+        rdfs:label           "resliced_img2";
+        prov:wasGeneratedBy  fmri:reslice2 .
+
+fmri:original-fmri-workflow
+        rdf:type            provone:Workflow;
+        prov:label          "fMRI workflow used in the Provenance Challenges";
+        schema:comment      "fMRI workflow used in the Provenance Challenges"^^schema:Text;
+        schema:downloadUrl  "https://openprovenance.org/provenance-challenge/FirstProvenanceChallenge.html"^^schema:URL .
+
+fmri:reslice2  rdf:type  prov:Activity;
+        rdfs:label  "reslice2";
+        prov:used   fmri:warp2 .
+
+fmri:align-warp3  rdf:type  prov:Activity;
+        rdfs:label  "align_warp3";
+        prov:used   fmri:anatomy-hdr3 , fmri:anatomy-img3 .
+
+fmri:fmri-workflow  rdf:type      provone:Workflow;
+        prov:label                "fMRI workflow";
+        prov:qualifiedDerivation  [ rdf:type     prov:Derivation;
+                                    prov:entity  fmri:original-fmri-workflow
+                                  ];
+        prov:qualifiedDerivation  [ rdf:type     prov:Derivation;
+                                    prov:entity  fmri:original-fmri-workflow
+                                  ];
+        schema:comment            "Implemenation of fMRI workflow used in the Provenance Challenges with Snakemake."^^schema:Text;
+        schema:downloadUrl        "https://github.com/fbartusch/fMRI_snakemake"^^schema:URL .
+
+fmri:anatomy-hdr3-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy3_resliced.hdr";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe3
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.hdr";
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+
+fmri:warp2  rdf:type         prov:Entity;
+        rdfs:label           "warp2";
+        prov:wasGeneratedBy  fmri:align-warp2 .
+
+fmri:anatomy-hdr2  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_hdr2";
+        prov:label       "anatomy2.hdr";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy2.hdr";
+        schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
+
+fmri:reslice-exe3  rdf:type        provone:Execution;
+        prov:endTime               "2023-08-21T05:44:06.461+02:00";
+        prov:label                 "reslice_execution_3";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:reslice
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:warp-file3
+                                   ];
+        prov:startTime             "2023-08-21T05:44:06.137+02:00" .
+
+fmri:align-warp-exe2  rdf:type     provone:Execution;
+        prov:endTime               "2023-08-21T05:44:05.617+02:00";
+        prov:label                 "align_warp_execution_2";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:align-warp
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr2
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img2
+                                   ];
+        prov:startTime             "2023-08-21T05:44:05.365+02:00" .
+
+fmri:reslice  rdf:type           provone:Program;
+        prov:label               "reslice";
+        schema:applicationSuite  "AIR"^^schema:Text;
+        schema:citation          "http://air.bmap.ucla.edu/AIR5/AIRrefs.html"^^schema:URL;
+        schema:comment           "AIR Suite needs registering account. No-cost and custom license."^^schema:Text;
+        schema:downloadUrl       "http://air.bmap.ucla.edu/AIR5/index.html"^^schema:URL;
+        schema:softwareVersion   "5.3.0"^^schema:Text .
+
+fmri:resliced-img3  rdf:type  prov:Entity;
+        rdfs:label           "resliced_img3";
+        prov:wasGeneratedBy  fmri:reslice3 .
+
+fmri:slicer-x  rdf:type           provone:Data;
+        prov:label                "atlas_x.pgm";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:slicer-exe
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_x.pgm";
+        schema:sha256             "31499fcfc4e3100c46fb24f912cf8f3c008a36f80a277fde5e702f75e6cf38a8" .
+
+fmri:reslice3  rdf:type  prov:Activity;
+        rdfs:label  "reslice3";
+        prov:used   fmri:warp3 .
+
+fmri:anatomy-img1-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy1_resliced.img";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe1
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.img";
+        schema:sha256             "13b391af7ffaea0f8a6752e7c9a6dfddc4f2541eefb38f712912801fb9218887" .
+
+fmri:slicer  rdf:type            provone:Program;
+        prov:label               "slicer";
+        schema:applicationSuite  "FSL"^^schema:Text;
+        schema:citation          "https://fsl.fmrib.ox.ac.uk/fsl/fslwiki"^^schema:URL;
+        schema:comment           "FSL Suite needs registering account before downloading. No-cost and custom license."^^schema:Text;
+        schema:downloadUrl       "https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation"^^schema:URL;
+        schema:softwareVersion   "3.5.3"^^schema:Text .
+
+fmri:align-warp4  rdf:type  prov:Activity;
+        rdfs:label  "align_warp4";
+        prov:used   fmri:anatomy-hdr4 , fmri:anatomy-img4 .
+
+fmri:warp3  rdf:type         prov:Entity;
+        rdfs:label           "warp3";
+        prov:wasGeneratedBy  fmri:align-warp3 .
+
+fmri:anatomy-hdr3  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_hdr3";
+        prov:label       "anatomy3.hdr";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy3.hdr";
+        schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
+
+fmri:reslice-exe4  rdf:type        provone:Execution;
+        prov:endTime               "2023-08-21T05:44:07.117+02:00";
+        prov:label                 "reslice_execution_4";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:reslice
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:warp-file4
+                                   ];
+        prov:startTime             "2023-08-21T05:44:06.797+02:00" .
+
+fmri:align-warp-exe3  rdf:type     provone:Execution;
+        prov:endTime               "2023-08-21T05:44:06.137+02:00";
+        prov:label                 "align_warp_execution_3";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:align-warp
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-hdr3
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:anatomy-img3
+                                   ];
+        prov:startTime             "2023-08-21T05:44:05.885+02:00" .
+
+fmri:convert  rdf:type           provone:Program;
+        prov:label               "convert";
+        schema:applicationSuite  "ImageMagick"^^schema:Text;
+        schema:citation          "ImageMagick Studio LLC. (2023). ImageMagick. Retrieved from https://imagemagick.org"^^schema:URL;
+        schema:downloadUrl       "https://legacy.imagemagick.org/script/download.php"^^schema:URL;
+        schema:softwareVersion   "6.9.10-23 Q16 x86_64 20190101"^^schema:Text .
+
+fmri:resliced-img4  rdf:type  prov:Entity;
+        rdfs:label           "resliced_img4";
+        prov:wasGeneratedBy  fmri:reslice4 .
+
+fmri:anatomy-hdr4-resliced
+        rdf:type                  provone:Data;
+        prov:label                "anatomy4_resliced.hdr";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:reslice-exe4
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.hdr";
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+
+fmri:resliced-hdr1  rdf:type  prov:Entity;
+        rdfs:label           "resliced_hdr1";
+        prov:wasGeneratedBy  fmri:reslice1 .
+
+fmri:reslice4  rdf:type  prov:Activity;
+        rdfs:label  "reslice4";
+        prov:used   fmri:warp4 .
+
+fmri:slicer-y  rdf:type           provone:Data;
+        prov:label                "atlas_y.pgm";
+        prov:qualifiedGeneration  [ rdf:type       prov:Generation;
+                                    prov:activity  fmri:slicer-exe
+                                  ];
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_y.pgm";
+        schema:sha256             "54c8eee603bcfd86d7816f7a5e399fb5abd434540fdfe95b2f1f81da4a0cf47c" .
+
+fmri:softmean  rdf:type          prov:Activity , provone:Program;
+        rdfs:label               "softmean";
+        prov:label               "softmean";
+        prov:used                fmri:resliced-hdr2 , fmri:resliced-img4 , fmri:resliced-hdr1 , fmri:resliced-img2 , fmri:resliced-img3 , fmri:resliced-hdr4 , fmri:resliced-img1 , fmri:resliced-hdr3;
+        schema:applicationSuite  "AIR"^^schema:Text;
+        schema:citation          "http://air.bmap.ucla.edu/AIR5/AIRrefs.html"^^schema:URL;
+        schema:comment           "AIR Suite needs registering account. No-cost and custom license."^^schema:Text;
+        schema:downloadUrl       "http://air.bmap.ucla.edu/AIR5/index.html"^^schema:URL;
+        schema:softwareVersion   "5.3.0"^^schema:Text .
+
+fmri:anatomy-img1  rdf:type  provone:Data , prov:Entity;
+        rdfs:label       "anatomy_img1";
+        prov:label       "anatomy1.img";
+        schema:location  "~/github/fMRI_snakemake/resources/example_input/samples/anatomy1.img";
+        schema:sha256    "f4696781e18af5b34ae432f6de97f98608fdc7d16e955110ef82a3719538d226" .
+
+fmri:slicer-exe  rdf:type          provone:Execution;
+        prov:endTime               "2023-08-21T05:44:10.789+02:00";
+        prov:label                 "slicer_execution";
+        prov:qualifiedAssociation  [ rdf:type      prov:Association;
+                                     prov:agent    fmri:felix;
+                                     prov:hadPlan  fmri:slicer
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:atlas-hdr
+                                   ];
+        prov:qualifiedUsage        [ rdf:type     prov:Usage;
+                                     prov:entity  fmri:atlas-img
+                                   ];
+        prov:startTime             "2023-08-21T05:44:08.525+02:00" .

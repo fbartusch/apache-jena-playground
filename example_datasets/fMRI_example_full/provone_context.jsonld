@@ -1,0 +1,140 @@
+{
+	"@context":
+	{
+        "provone": "http://purl.dataone.org/provone/2015/01/15/ontology#",
+		"prov": "http://www.w3.org/ns/prov#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"controls":
+		{
+			"@id": "provone:Controls",
+            "@context" : {
+				"controller": {
+					"@id": "provone:controller",
+					"@type": "@id"
+				},
+				"program": {
+					"@id": "provone:program",
+					"@type": "@id"
+				}
+			}
+		},
+		
+		"ConnectsTo": {
+			"@id": "provone:ConnectsTo",
+            "@context" : {
+				"port": {
+					"@id": "provone:Port",
+					"@type": "@id"
+				},
+				"channel": {
+					"@id": "provone:channel",
+					"@type": "@id"
+				}
+			}
+		},
+		
+		"HasDefaultParam": {
+			"@id": "provone:HasDefaultParam",
+            "@context" : {
+				"port": {
+					"@id": "provone:Port",
+					"@type": "@id"
+				},
+				"entity": {
+					"@id": "prov:entity",
+					"@type": "@id"
+				}
+			}
+		},
+
+		"HasInPort": {
+			"@id": "provone:HasInPort",
+            "@context" : {
+				"program": {
+					"@id": "provone:Program",
+					"@type": "@id"
+				},
+				"port": {
+					"@id": "provone:Port",
+					"@type": "@id"
+				}
+			}
+		},
+
+		"HasOutPort": {
+			"@id": "provone:HasOutPort",
+            "@context" : {
+				"program": {
+					"@id": "provone:Program",
+					"@type": "@id"
+				},
+				"port": {
+					"@id": "provone:Port",
+					"@type": "@id"
+				}
+			}
+		},
+		
+		"HadInPort": {
+			"@id": "provone:HadInPort",
+            "@context" : {
+				"usage": {
+					"@id": "prov:Usage",
+					"@type": "@id"
+				},
+				"port": {
+					"@id": "provone:Port",
+					"@type": "@id"
+				}
+			}
+		},
+
+		"HadOutPort": {
+			"@id": "provone:HadOutPort",
+            "@context" : {
+				"generation": {
+					"@id": "prov:Generation",
+					"@type": "@id"
+				},
+				"port": {
+					"@id": "provone:Port",
+					"@type": "@id"
+				}
+			}
+		},
+		
+		"HadEntity": {
+			"@id": "provone:HadEntity",
+            "@context" : {
+				"usage": {
+					"@id": "prov:Usage",
+					"@type": "@id"
+				},
+                "generation": {
+					"@id": "prov:Generation",
+					"@type": "@id"
+				},
+				"entity": {
+					"@id": "prov:eort",
+					"@type": "@id"
+				}
+			}
+		},
+		
+		"provone:HasSubProgram": {
+			"@id": "provone:HasSubProgram",
+            "@context" : {
+				"parent": {
+					"@reverse": "provone:hasSubProgram",
+					"@type": "@id"
+				},
+				"child": {
+					"@id": "provone:hasSubProgram",
+					"@type": "@id"
+				}
+			}
+		}
+    }
+}

@@ -234,6 +234,156 @@ s-query --service http://localhost:3030/ds/query 'SELECT * {?s ?p ?o}'
 
 1. Find the process that led to Atlas X Graphic / everything that caused Atlas X Graphic to be as it is. This should tell us the new brain images from which the averaged atlas was generated, the warping performed etc. 
 
+The URI of the Atlas X Graphic in the example is `fmri:convert-x`. Let's get some information about that file. The next query shows every triple where `fmri:convert-x` is the subject`
+
+```
+s-query --service http://localhost:3030/ds/query \
+     'PREFIX schema:  <https://schema.org/>
+      PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+      PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
+      PREFIX dcterms: <http://purl.org/dc/terms/>
+      PREFIX prov: <http://www.w3.org/ns/prov#>
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      PREFIX fmri: <https://example.com/>
+      PREFIX scoro: <http://purl.org/spar/scoro/>
+      SELECT ?s ?p ?o
+      WHERE {fmri:convert-x ?p ?o .}'
+
+{ "head": {
+    "vars": [ "s" , "p" , "o" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://purl.dataone.org/provone/2015/01/15/ontology#Data" }
+      } ,
+      { 
+        "p": { "type": "uri" , "value": "http://www.w3.org/ns/prov#label" } ,
+        "o": { "type": "literal" , "value": "atlas_x.gif" }
+      } ,
+      { 
+        "p": { "type": "uri" , "value": "https://schema.org/location" } ,
+        "o": { "type": "literal" , "value": "~/github/fMRI_snakemake/results/slices/atlas_x.gif" }
+      } ,
+      { 
+        "p": { "type": "uri" , "value": "https://schema.org/sha256" } ,
+        "o": { "type": "literal" , "value": "882fe0286e2fae0c5c1e9f3420bb7da6004a6900c96ef8f018c2c44a7c8b
+0a1a" }
+      } ,
+      { 
+        "p": { "type": "uri" , "value": "http://www.w3.org/ns/prov#qualifiedGeneration" } ,
+        "o": { "type": "bnode" , "value": "b0" }
+      }
+    ]
+  }
+}
+```
+
+We can see that `fmri:convert-x` is the subject for a `prov:qualifiedGeneration` predicate. We can get more information about the Generation of `fmri:convert-x` by looking at the object of that triple:
+
+```
+s-query --service http://localhost:3030/ds/query \
+    'PREFIX rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+     PREFIX schema:  <https://schema.org/>
+     PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+     PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
+     PREFIX dcterms: <http://purl.org/dc/terms/>
+     PREFIX prov: <http://www.w3.org/ns/prov#>
+     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+     PREFIX fmri: <https://example.com/>
+     PREFIX scoro: <http://purl.org/spar/scoro/>
+     SELECT ?generation ?p ?o
+     WHERE {fmri:convert-x prov:qualifiedGeneration ?generation .
+            ?generation ?p ?o .}'
+
+{ "head": {
+    "vars": [ "generation" , "p" , "o" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "generation": { "type": "bnode" , "value": "b0" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/ns/prov#Generation" }
+      } ,
+      { 
+        "generation": { "type": "bnode" , "value": "b0" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/ns/prov#activity" } ,
+        "o": { "type": "uri" , "value": "https://example.com/convert-exe" }
+      }
+    ]
+  }
+}
+```
+
+Now we have the activity `convert-exe` that created our file `fmri:convert-x`. Let's get details about the program used in that activity:
+
+```
+s-query --service http://localhost:3030/ds/query \
+    'PREFIX rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+     PREFIX schema:  <https://schema.org/>
+     PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+     PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
+     PREFIX dcterms: <http://purl.org/dc/terms/>
+     PREFIX prov: <http://www.w3.org/ns/prov#>
+     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+     PREFIX fmri: <https://example.com/>
+     PREFIX scoro: <http://purl.org/spar/scoro/>
+     SELECT ?program ?p ?o
+     WHERE {fmri:convert-x prov:qualifiedGeneration ?generation .
+            ?generation prov:activity ?execution .
+            ?execution prov:qualifiedAssociation ?association .
+            ?association prov:hadPlan ?program .
+            ?program ?p ?o}'
+{ "head": {
+    "vars": [ "program" , "p" , "o" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "program": { "type": "uri" , "value": "https://example.com/convert" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://purl.dataone.org/provone/2015/01/15/ontology#Program" }
+      } ,
+      { 
+        "program": { "type": "uri" , "value": "https://example.com/convert" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/ns/prov#label" } ,
+        "o": { "type": "literal" , "value": "convert" }
+      } ,
+      { 
+        "program": { "type": "uri" , "value": "https://example.com/convert" } ,
+        "p": { "type": "uri" , "value": "https://schema.org/applicationSuite" } ,
+        "o": { "type": "literal" , "datatype": "https://schema.org/Text" , "value": "ImageMagick" }
+      } ,
+      { 
+        "program": { "type": "uri" , "value": "https://example.com/convert" } ,
+        "p": { "type": "uri" , "value": "https://schema.org/citation" } ,
+        "o": { "type": "literal" , "datatype": "https://schema.org/URL" , "value": "ImageMagick Studio LL
+C. (2023). ImageMagick. Retrieved from https://imagemagick.org" }
+      } ,
+      { 
+        "program": { "type": "uri" , "value": "https://example.com/convert" } ,
+        "p": { "type": "uri" , "value": "https://schema.org/downloadUrl" } ,
+        "o": { "type": "literal" , "datatype": "https://schema.org/URL" , "value": "https://legacy.imagem
+agick.org/script/download.php" }
+      } ,
+      { 
+        "program": { "type": "uri" , "value": "https://example.com/convert" } ,
+        "p": { "type": "uri" , "value": "https://schema.org/softwareVersion" } ,
+        "o": { "type": "literal" , "datatype": "https://schema.org/Text" , "value": "6.9.10-23 Q16 x86_64
+ 20190101" }
+      }
+    ]
+  }
+}
+```
+
+
+
+This shorter query should create a whole subgraph. The subgraph contains all information about the generation of `fmri:convert-x`.
+
+
 From:
 https://stackoverflow.com/questions/37186530/how-do-i-construct-get-the-whole-sub-graph-from-a-given-resource-in-rdf-graph
 ```
@@ -247,46 +397,11 @@ s-query --service http://localhost:3030/ds/query \
      PREFIX fmri: <https://example.com/>
      PREFIX scoro: <http://purl.org/spar/scoro/>
      CONSTRUCT { ?s ?p ?o }
-     WHERE { fmri:convert-x (prov:label|!prov:label)* ?s . ?s ?p ?o . }'
-```
-
-Problem: Nothing is connected to `fmri:convert-x` except `fmri:convert-x` itself.
-Find first the execution that generated `fmri:convert-x` and then use the construct?
-
-
-Show all information about a specific file:
-
-```
-s-query --service http://localhost:3030/ds/query \
-    'PREFIX schema:  <https://schema.org/>
-     PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
-     PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
-     PREFIX dcterms: <http://purl.org/dc/terms/>
-     PREFIX prov: <http://www.w3.org/ns/prov#>
-     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-     PREFIX fmri: <https://example.com/>
-     PREFIX scoro: <http://purl.org/spar/scoro/>
-     SELECT ?s ?p ?o
-     WHERE {fmri:convert-x ?p ?o .}'
+     WHERE {fmri:convert-x (prov:label|!prov:label)* ?s . ?s ?p ?o .}'
 ```
 
 
 
-Show ever program and its version if the information exists:
-
-```
-s-query --service http://localhost:3030/ds/query \
-    'PREFIX schema:  <https://schema.org/>
-     PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
-     PREFIX provone: <http://purl.dataone.org/provone/2015/01/15/ontology#>
-     PREFIX dcterms: <http://purl.org/dc/terms/>
-     PREFIX prov: <http://www.w3.org/ns/prov#>
-     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-     PREFIX fmri: <https://example.com/>
-     PREFIX scoro: <http://purl.org/spar/scoro/>
-     SELECT ?s ?o
-     WHERE {fmri:convert-x schema:softwareVersion ?o .}'
-```
 
 
 ## SPARQL Queries on RDF

@@ -8,7 +8,7 @@
     "foaf" : "http://xmlns.com/foaf/0.1/",
     "fmri" : "https://example.com/",
     "scoro" : "http://purl.org/spar/scoro/"
-  }, "http://localhost:8000/context.jsonld" ],
+  }, "http://localhost:8000/context.jsonld", "http://localhost:8000/provone_context.jsonld" ],
   "@graph" : [ {
     "@type" : "provone:Program",
     "@id" : "fmri:align-warp",
@@ -409,90 +409,90 @@
       "@value" : "fMRI workflow used in the Provenance Challenges"
     } ]
   }, {
-    "@type" : "provone:Execution",
+    "@type" : "prov:Activity",
     "@id" : "fmri:wf-execution",
-    "startTime" : "2023-08-21T05:44:05.105+02:00",
-    "endTime" : "2023-08-21T05:44:10.821+02:00",
+    "prov:startTime" : "2023-08-21T05:44:05.105+02:00",
+    "prov:endTime" : "2023-08-21T05:44:10.821+02:00",
     "prov:label" : [ {
       "@value" : "workflow_execution"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:align-warp-exe1",
-    "startTime" : "2023-08-21T05:44:05.105+02:00",
-    "endTime" : "2023-08-21T05:44:05.361+02:00",
+    "prov:startTime" : "2023-08-21T05:44:05.105+02:00",
+    "prov:endTime" : "2023-08-21T05:44:05.361+02:00",
     "prov:label" : [ {
       "@value" : "align_warp_execution_1"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:align-warp-exe2",
-    "startTime" : "2023-08-21T05:44:05.365+02:00",
-    "endTime" : "2023-08-21T05:44:05.617+02:00",
+    "prov:startTime" : "2023-08-21T05:44:05.365+02:00",
+    "prov:endTime" : "2023-08-21T05:44:05.617+02:00",
     "prov:label" : [ {
       "@value" : "align_warp_execution_2"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:align-warp-exe3",
-    "startTime" : "2023-08-21T05:44:05.885+02:00",
-    "endTime" : "2023-08-21T05:44:06.137+02:00",
+    "prov:startTime" : "2023-08-21T05:44:05.885+02:00",
+    "prov:endTime" : "2023-08-21T05:44:06.137+02:00",
     "prov:label" : [ {
       "@value" : "align_warp_execution_3"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:align-warp-exe4",
-    "startTime" : "2023-08-21T05:44:05.617+02:00",
-    "endTime" : "2023-08-21T05:44:05.881+02:00",
+    "prov:startTime" : "2023-08-21T05:44:05.617+02:00",
+    "prov:endTime" : "2023-08-21T05:44:05.881+02:00",
     "prov:label" : [ {
       "@value" : "align_warp_execution_4"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:reslice-exe2",
-    "startTime" : "2023-08-21T05:44:06.461+02:00",
-    "endTime" : "2023-08-21T05:44:06.793+02:00",
+    "prov:startTime" : "2023-08-21T05:44:06.461+02:00",
+    "prov:endTime" : "2023-08-21T05:44:06.793+02:00",
     "prov:label" : [ {
       "@value" : "reslice_execution_2"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:reslice-exe3",
-    "startTime" : "2023-08-21T05:44:06.137+02:00",
-    "endTime" : "2023-08-21T05:44:06.461+02:00",
+    "prov:startTime" : "2023-08-21T05:44:06.137+02:00",
+    "prov:endTime" : "2023-08-21T05:44:06.461+02:00",
     "prov:label" : [ {
       "@value" : "reslice_execution_3"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:reslice-exe4",
-    "startTime" : "2023-08-21T05:44:06.797+02:00",
-    "endTime" : "2023-08-21T05:44:07.117+02:00",
+    "prov:startTime" : "2023-08-21T05:44:06.797+02:00",
+    "prov:endTime" : "2023-08-21T05:44:07.117+02:00",
     "prov:label" : [ {
       "@value" : "reslice_execution_4"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:softmean-exe",
-    "startTime" : "2023-08-21T05:44:07.449+02:00",
-    "endTime" : "2023-08-21T05:44:08.525+02:00",
+    "prov:startTime" : "2023-08-21T05:44:07.449+02:00",
+    "prov:endTime" : "2023-08-21T05:44:08.525+02:00",
     "prov:label" : [ {
       "@value" : "softmean_execution"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:slicer-exe",
-    "startTime" : "2023-08-21T05:44:08.525+02:00",
-    "endTime" : "2023-08-21T05:44:10.789+02:00",
+    "prov:startTime" : "2023-08-21T05:44:08.525+02:00",
+    "prov:endTime" : "2023-08-21T05:44:10.789+02:00",
     "prov:label" : [ {
       "@value" : "slicer_execution"
     } ]
   }, {
     "@type" : "provone:Execution",
     "@id" : "fmri:convert-exe",
-    "startTime" : "2023-08-21T05:44:10.793+02:00",
-    "endTime" : "2023-08-21T05:44:10.821+02:00",
+    "prov:startTime" : "2023-08-21T05:44:10.793+02:00",
+    "prov:endTime" : "2023-08-21T05:44:10.821+02:00",
     "prov:label" : [ {
       "@value" : "convert execution"
     } ]
@@ -1344,5 +1344,11 @@
     "@type" : "prov:Generation",
     "entity" : "fmri:convert-z",
     "activity" : "fmri:convert-exe"
+  }, {
+    "@type" : "prov:Generation",
+    "@id" : "fmri:generation1",
+    "entity" : "fmri:warp-file1",
+    "activity" : "fmri:align-warp-exe1",
+    "time" : "2023-08-21T05:44:05.361+02:00"
   } ]
 }

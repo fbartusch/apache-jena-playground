@@ -28,40 +28,31 @@ _:b2    a                provone:HasInPort ;
         provone:program  "fmri:softmean" .
 
 _:b3    a              prov:Generation ;
-        prov:activity  fmri:reslice-exe4 ;
-        prov:entity    fmri:anatomy-hdr4-resliced .
+        prov:activity  fmri:reslice-exe4 .
 
 _:b4    a              prov:Generation ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:atlas-img .
+        prov:activity  fmri:softmean-exe .
 
 _:b5    a              prov:Generation ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:atlas-hdr .
+        prov:activity  fmri:softmean-exe .
 
 _:b6    a              prov:Generation ;
-        prov:activity  fmri:slicer-exe ;
-        prov:entity    fmri:slicer-x .
+        prov:activity  fmri:slicer-exe .
 
 _:b7    a              prov:Generation ;
-        prov:activity  fmri:slicer-exe ;
-        prov:entity    fmri:slicer-y .
+        prov:activity  fmri:slicer-exe .
 
 _:b8    a              prov:Generation ;
-        prov:activity  fmri:slicer-exe ;
-        prov:entity    fmri:slicer-z .
+        prov:activity  fmri:slicer-exe .
 
 _:b9    a              prov:Generation ;
-        prov:activity  fmri:convert-exe ;
-        prov:entity    fmri:convert-x .
+        prov:activity  fmri:convert-exe .
 
 _:b10   a              prov:Generation ;
-        prov:activity  fmri:convert-exe ;
-        prov:entity    fmri:convert-y .
+        prov:activity  fmri:convert-exe .
 
 _:b11   a              prov:Generation ;
-        prov:activity  fmri:convert-exe ;
-        prov:entity    fmri:convert-z .
+        prov:activity  fmri:convert-exe .
 
 _:b12   a                provone:HasInPort ;
         provone:port     "fmri:softmean-in-hdr" ;
@@ -151,21 +142,27 @@ _:b33   a                provone:ConnectsTo ;
         provone:channel  "fmri:ch-slicerOut-ConvertIn" ;
         provone:port     "fmri:convert-in" .
 
-_:b34   a       provone:HasSubProgram .
+_:b34   a                      provone:HasSubProgram ;
+        provone:hasSubProgram  fmri:align-warp .
 
-_:b35   a       provone:HasSubProgram .
+_:b35   a                      provone:HasSubProgram ;
+        provone:hasSubProgram  fmri:reslice .
 
-_:b36   a       provone:HasSubProgram .
+_:b36   a                      provone:HasSubProgram ;
+        provone:hasSubProgram  fmri:softmean .
 
-_:b37   a       provone:HasSubProgram .
+_:b37   a                      provone:HasSubProgram ;
+        provone:hasSubProgram  fmri:slicer .
 
-_:b38   a       provone:HasSubProgram .
+_:b38   a                      provone:HasSubProgram ;
+        provone:hasSubProgram  fmri:convert .
 
 _:b39   a             provone:HasDefaultParam ;
         provone:port  "fmri:align-warp-inPort5" ;
         prov:entity   "fmri:align-warp-m-default-param" .
 
-_:b40   a       prov:Derivation .
+_:b40   a            prov:Derivation ;
+        prov:entity  fmri:original-fmri-workflow .
 
 _:b41   a                   provone:Controls ;
         provone:controller  "fmri:snakemake" ;
@@ -227,217 +224,181 @@ _:b55   a               provone:WasPartOf ;
         provone:child   "fmri:convert-exe" ;
         provone:parent  "fmri:wf-execution" .
 
-_:b56   a              prov:Association ;
-        prov:activity  fmri:wf-execution ;
-        prov:agent     fmri:felix .
+_:b56   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:fmri-workflow .
 
-_:b57   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe1 ;
-        prov:entity    fmri:anatomy-img1 .
+_:b57   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img1 .
 
-_:b58   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe1 ;
-        prov:entity    fmri:anatomy-hdr1 .
+_:b58   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr1 .
 
-_:b59   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe2 ;
-        prov:entity    fmri:anatomy-img2 .
+_:b59   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img2 .
 
-_:b60   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe2 ;
-        prov:entity    fmri:anatomy-hdr2 .
+_:b60   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr2 .
 
-_:b61   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe3 ;
-        prov:entity    fmri:anatomy-img3 .
+_:b61   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img3 .
 
-_:b62   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe3 ;
-        prov:entity    fmri:anatomy-hdr3 .
+_:b62   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr3 .
 
-_:b63   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe4 ;
-        prov:entity    fmri:anatomy-img4 .
+_:b63   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img4 .
 
-_:b64   a              prov:Usage ;
-        prov:activity  fmri:align-warp-exe4 ;
-        prov:entity    fmri:anatomy-hdr4 .
+_:b64   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr4 .
 
 _:b65   a                provone:HasOutPort ;
         provone:port     "fmri:align-warp-out" ;
         provone:program  "fmri:align-warp" .
 
-_:b66   a              prov:Usage ;
-        prov:activity  fmri:reslice-exe1 ;
-        prov:entity    fmri:warp-file1 .
+_:b66   a            prov:Usage ;
+        prov:entity  fmri:warp-file1 .
 
-_:b67   a              prov:Usage ;
-        prov:activity  fmri:reslice-exe2 ;
-        prov:entity    fmri:warp-file2 .
+_:b67   a            prov:Usage ;
+        prov:entity  fmri:warp-file2 .
 
-_:b68   a              prov:Usage ;
-        prov:activity  fmri:reslice-exe3 ;
-        prov:entity    fmri:warp-file3 .
+_:b68   a            prov:Usage ;
+        prov:entity  fmri:warp-file3 .
 
-_:b69   a              prov:Usage ;
-        prov:activity  fmri:reslice-exe4 ;
-        prov:entity    fmri:warp-file4 .
+_:b69   a            prov:Usage ;
+        prov:entity  fmri:warp-file4 .
 
-_:b70   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-img1-resliced .
+_:b70   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img1-resliced .
 
-_:b71   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-hdr1-resliced .
+_:b71   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr1-resliced .
 
-_:b72   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-img2-resliced .
+_:b72   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img2-resliced .
 
-_:b73   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-hdr2-resliced .
+_:b73   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr2-resliced .
 
-_:b74   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-img3-resliced .
+_:b74   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img3-resliced .
 
-_:b75   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-hdr3-resliced .
+_:b75   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr3-resliced .
 
 _:b76   a                provone:HasInPort ;
         provone:port     "fmri:reslice-in" ;
         provone:program  "fmri:reslice" .
 
-_:b77   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-img4-resliced .
+_:b77   a            prov:Usage ;
+        prov:entity  fmri:anatomy-img4-resliced .
 
-_:b78   a              prov:Usage ;
-        prov:activity  fmri:softmean-exe ;
-        prov:entity    fmri:anatomy-hdr4-resliced .
+_:b78   a            prov:Usage ;
+        prov:entity  fmri:anatomy-hdr4-resliced .
 
-_:b79   a              prov:Usage ;
-        prov:activity  fmri:slicer-exe ;
-        prov:entity    fmri:atlas-img .
+_:b79   a            prov:Usage ;
+        prov:entity  fmri:atlas-img .
 
-_:b80   a              prov:Usage ;
-        prov:activity  fmri:slicer-exe ;
-        prov:entity    fmri:atlas-hdr .
+_:b80   a            prov:Usage ;
+        prov:entity  fmri:atlas-hdr .
 
-_:b81   a              prov:Usage ;
-        prov:activity  fmri:convert-exe ;
-        prov:entity    fmri:slicer-x .
+_:b81   a            prov:Usage ;
+        prov:entity  fmri:slicer-x .
 
-_:b82   a              prov:Usage ;
-        prov:activity  fmri:convert-exe ;
-        prov:entity    fmri:slicer-y .
+_:b82   a            prov:Usage ;
+        prov:entity  fmri:slicer-y .
 
-_:b83   a              prov:Usage ;
-        prov:activity  fmri:convert-exe ;
-        prov:entity    fmri:slicer-z .
+_:b83   a            prov:Usage ;
+        prov:entity  fmri:slicer-z .
 
-_:b84   a              prov:Association ;
-        prov:activity  fmri:wf-execution ;
-        prov:agent     fmri:felix .
+_:b84   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:fmri-workflow .
 
-_:b85   a              prov:Association ;
-        prov:activity  fmri:align-warp-exe1 ;
-        prov:agent     fmri:felix .
+_:b85   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:fmri-workflow .
 
-_:b86   a              prov:Association ;
-        prov:activity  fmri:align-warp-exe2 ;
-        prov:agent     fmri:felix .
+_:b86   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:align-warp .
 
 _:b87   a                provone:HasOutPort ;
         provone:port     "fmri:reslice-out-img" ;
         provone:program  "fmri:reslice" .
 
-_:b88   a              prov:Association ;
-        prov:activity  fmri:align-warp-exe3 ;
-        prov:agent     fmri:felix .
+_:b88   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:align-warp .
 
-_:b89   a              prov:Association ;
-        prov:activity  fmri:align-warp-exe4 ;
-        prov:agent     fmri:felix .
+_:b89   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:align-warp .
 
-_:b90   a              prov:Association ;
-        prov:activity  fmri:reslice-exe1 ;
-        prov:agent     fmri:felix .
+_:b90   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:reslice .
 
-_:b91   a              prov:Association ;
-        prov:activity  fmri:reslice-exe2 ;
-        prov:agent     fmri:felix .
+_:b91   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:reslice .
 
-_:b92   a              prov:Association ;
-        prov:activity  fmri:reslice-exe3 ;
-        prov:agent     fmri:felix .
+_:b92   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:reslice .
 
-_:b93   a              prov:Association ;
-        prov:activity  fmri:reslice-exe4 ;
-        prov:agent     fmri:felix .
+_:b93   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:reslice .
 
-_:b94   a              prov:Association ;
-        prov:activity  fmri:softmean-exe ;
-        prov:agent     fmri:felix .
+_:b94   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:softmean .
 
-_:b95   a              prov:Association ;
-        prov:activity  fmri:slicer-exe ;
-        prov:agent     fmri:felix .
+_:b95   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:slicer .
 
-_:b96   a              prov:Association ;
-        prov:activity  fmri:convert-exe ;
-        prov:agent     fmri:felix .
+_:b96   a             prov:Association ;
+        prov:agent    fmri:felix ;
+        prov:hadPlan  fmri:convert .
 
 _:b97   a              prov:Generation ;
-        prov:activity  fmri:align-warp-exe1 ;
-        prov:entity    fmri:warp-file1 .
+        prov:activity  fmri:align-warp-exe1 .
 
 _:b98   a                provone:HasOutPort ;
         provone:port     "fmri:reslice-out-hdr" ;
         provone:program  "fmri:reslice" .
 
 _:b99   a              prov:Generation ;
-        prov:activity  fmri:align-warp-exe2 ;
-        prov:entity    fmri:warp-file2 .
+        prov:activity  fmri:align-warp-exe2 .
 
 _:b100  a              prov:Generation ;
-        prov:activity  fmri:align-warp-exe3 ;
-        prov:entity    fmri:warp-file3 .
+        prov:activity  fmri:align-warp-exe3 .
 
 _:b101  a              prov:Generation ;
-        prov:activity  fmri:align-warp-exe4 ;
-        prov:entity    fmri:warp-file4 .
+        prov:activity  fmri:align-warp-exe4 .
 
 _:b102  a              prov:Generation ;
-        prov:activity  fmri:reslice-exe1 ;
-        prov:entity    fmri:anatomy-img1-resliced .
+        prov:activity  fmri:reslice-exe1 .
 
 _:b103  a              prov:Generation ;
-        prov:activity  fmri:reslice-exe1 ;
-        prov:entity    fmri:anatomy-hdr1-resliced .
+        prov:activity  fmri:reslice-exe1 .
 
 _:b104  a              prov:Generation ;
-        prov:activity  fmri:reslice-exe2 ;
-        prov:entity    fmri:anatomy-img2-resliced .
+        prov:activity  fmri:reslice-exe2 .
 
 _:b105  a              prov:Generation ;
-        prov:activity  fmri:reslice-exe2 ;
-        prov:entity    fmri:anatomy-hdr2-resliced .
+        prov:activity  fmri:reslice-exe2 .
 
 _:b106  a              prov:Generation ;
-        prov:activity  fmri:reslice-exe3 ;
-        prov:entity    fmri:anatomy-img3-resliced .
+        prov:activity  fmri:reslice-exe3 .
 
 _:b107  a              prov:Generation ;
-        prov:activity  fmri:reslice-exe3 ;
-        prov:entity    fmri:anatomy-hdr3-resliced .
+        prov:activity  fmri:reslice-exe3 .
 
 _:b108  a              prov:Generation ;
-        prov:activity  fmri:reslice-exe4 ;
-        prov:entity    fmri:anatomy-img4-resliced .
+        prov:activity  fmri:reslice-exe4 .
 
 fmri:align-warp  a               provone:Program ;
         prov:label               "align_warp" ;
@@ -447,17 +408,37 @@ fmri:align-warp  a               provone:Program ;
         schema:downloadUrl       "http://air.bmap.ucla.edu/AIR5/index.html"^^schema:URL ;
         schema:softwareVersion   "5.3.0"^^schema:Text .
 
-fmri:align-warp-exe1  a  provone:Execution ;
-        prov:label  "align_warp_execution_1" .
+fmri:align-warp-exe1  a            provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:05.361+02:00" ;
+        prov:label                 "align_warp_execution_1" ;
+        prov:qualifiedAssociation  _:b85 ;
+        prov:qualifiedUsage        _:b57 ;
+        prov:qualifiedUsage        _:b58 ;
+        prov:startTime             "2023-08-21T05:44:05.105+02:00" .
 
-fmri:align-warp-exe2  a  provone:Execution ;
-        prov:label  "align_warp_execution_2" .
+fmri:align-warp-exe2  a            provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:05.617+02:00" ;
+        prov:label                 "align_warp_execution_2" ;
+        prov:qualifiedAssociation  _:b86 ;
+        prov:qualifiedUsage        _:b59 ;
+        prov:qualifiedUsage        _:b60 ;
+        prov:startTime             "2023-08-21T05:44:05.365+02:00" .
 
-fmri:align-warp-exe3  a  provone:Execution ;
-        prov:label  "align_warp_execution_3" .
+fmri:align-warp-exe3  a            provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:06.137+02:00" ;
+        prov:label                 "align_warp_execution_3" ;
+        prov:qualifiedAssociation  _:b88 ;
+        prov:qualifiedUsage        _:b61 ;
+        prov:qualifiedUsage        _:b62 ;
+        prov:startTime             "2023-08-21T05:44:05.885+02:00" .
 
-fmri:align-warp-exe4  a  provone:Execution ;
-        prov:label  "align_warp_execution_4" .
+fmri:align-warp-exe4  a            provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:05.881+02:00" ;
+        prov:label                 "align_warp_execution_4" ;
+        prov:qualifiedAssociation  _:b89 ;
+        prov:qualifiedUsage        _:b63 ;
+        prov:qualifiedUsage        _:b64 ;
+        prov:startTime             "2023-08-21T05:44:05.617+02:00" .
 
 fmri:align-warp-inPort1
         a                      provone:Port ;
@@ -499,10 +480,11 @@ fmri:anatomy-hdr1  a     provone:Data ;
         schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
 
 fmri:anatomy-hdr1-resliced
-        a                provone:Data ;
-        prov:label       "anatomy1_resliced.hdr" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.hdr" ;
-        schema:sha256    "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+        a                         provone:Data ;
+        prov:label                "anatomy1_resliced.hdr" ;
+        prov:qualifiedGeneration  _:b103 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.hdr" ;
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
 
 fmri:anatomy-hdr2  a     provone:Data ;
         prov:label       "anatomy2.hdr" ;
@@ -510,10 +492,11 @@ fmri:anatomy-hdr2  a     provone:Data ;
         schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
 
 fmri:anatomy-hdr2-resliced
-        a                provone:Data ;
-        prov:label       "anatomy2_resliced.hdr" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.hdr" ;
-        schema:sha256    "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+        a                         provone:Data ;
+        prov:label                "anatomy2_resliced.hdr" ;
+        prov:qualifiedGeneration  _:b105 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.hdr" ;
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
 
 fmri:anatomy-hdr3  a     provone:Data ;
         prov:label       "anatomy3.hdr" ;
@@ -521,10 +504,11 @@ fmri:anatomy-hdr3  a     provone:Data ;
         schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
 
 fmri:anatomy-hdr3-resliced
-        a                provone:Data ;
-        prov:label       "anatomy3_resliced.hdr" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.hdr" ;
-        schema:sha256    "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+        a                         provone:Data ;
+        prov:label                "anatomy3_resliced.hdr" ;
+        prov:qualifiedGeneration  _:b107 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.hdr" ;
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
 
 fmri:anatomy-hdr4  a     provone:Data ;
         prov:label       "anatomy4.hdr" ;
@@ -532,10 +516,11 @@ fmri:anatomy-hdr4  a     provone:Data ;
         schema:sha256    "95c931aef606f6d35a8010c60b30e07dad2fb40c2c89e412372d7d37171f740c" .
 
 fmri:anatomy-hdr4-resliced
-        a                provone:Data ;
-        prov:label       "anatomy4_resliced.hdr" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.hdr" ;
-        schema:sha256    "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
+        a                         provone:Data ;
+        prov:label                "anatomy4_resliced.hdr" ;
+        prov:qualifiedGeneration  _:b3 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.hdr" ;
+        schema:sha256             "0f9a1ed3db481499a4ec66947db970648fcdad303129a0821d8e1cb8d1b9d55d" .
 
 fmri:anatomy-img1  a     provone:Data ;
         prov:label       "anatomy1.img" ;
@@ -543,10 +528,11 @@ fmri:anatomy-img1  a     provone:Data ;
         schema:sha256    "f4696781e18af5b34ae432f6de97f98608fdc7d16e955110ef82a3719538d226" .
 
 fmri:anatomy-img1-resliced
-        a                provone:Data ;
-        prov:label       "anatomy1_resliced.img" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.img" ;
-        schema:sha256    "13b391af7ffaea0f8a6752e7c9a6dfddc4f2541eefb38f712912801fb9218887" .
+        a                         provone:Data ;
+        prov:label                "anatomy1_resliced.img" ;
+        prov:qualifiedGeneration  _:b102 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy1_resliced.img" ;
+        schema:sha256             "13b391af7ffaea0f8a6752e7c9a6dfddc4f2541eefb38f712912801fb9218887" .
 
 fmri:anatomy-img2  a     provone:Data ;
         prov:label       "anatomy2.img" ;
@@ -554,10 +540,11 @@ fmri:anatomy-img2  a     provone:Data ;
         schema:sha256    "39e5c7ad3f6bca0c6f983ce6a327b480e7d6f2d0510670867923a1dce94928fd" .
 
 fmri:anatomy-img2-resliced
-        a                provone:Data ;
-        prov:label       "anatomy2_resliced.img" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.img" ;
-        schema:sha256    "45288258afe701bd00dc1385217efb0fcd1806eff1ad2e278c5be9b421bb8c88" .
+        a                         provone:Data ;
+        prov:label                "anatomy2_resliced.img" ;
+        prov:qualifiedGeneration  _:b104 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy2_resliced.img" ;
+        schema:sha256             "45288258afe701bd00dc1385217efb0fcd1806eff1ad2e278c5be9b421bb8c88" .
 
 fmri:anatomy-img3  a     provone:Data ;
         prov:label       "anatomy3.img" ;
@@ -565,10 +552,11 @@ fmri:anatomy-img3  a     provone:Data ;
         schema:sha256    "42869acea37b0c25e6599ca2f342c80cabceeba0d956a0cf0674a3fa406e1fc1" .
 
 fmri:anatomy-img3-resliced
-        a                provone:Data ;
-        prov:label       "anatomy3_resliced.img" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.img" ;
-        schema:sha256    "3184307ef781d7aad8b7d62110a39a525a96a97e61f30f762f15379cacc33def3" .
+        a                         provone:Data ;
+        prov:label                "anatomy3_resliced.img" ;
+        prov:qualifiedGeneration  _:b106 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy3_resliced.img" ;
+        schema:sha256             "3184307ef781d7aad8b7d62110a39a525a96a97e61f30f762f15379cacc33def3" .
 
 fmri:anatomy-img4  a     provone:Data ;
         prov:label       "anatomy4.img" ;
@@ -576,20 +564,23 @@ fmri:anatomy-img4  a     provone:Data ;
         schema:sha256    "6b549bd112d865e7cfb0d4309b46987517ec7623832d78a79f2229fc6b24dddf" .
 
 fmri:anatomy-img4-resliced
-        a                provone:Data ;
-        prov:label       "anatomy4_resliced.img" ;
-        schema:location  "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.img" ;
-        schema:sha256    "707bb33cc601979ea66a582d409cb065b56862d0b61999eee6c3ba81a3187158" .
+        a                         provone:Data ;
+        prov:label                "anatomy4_resliced.img" ;
+        prov:qualifiedGeneration  _:b108 ;
+        schema:location           "~/github/fMRI_snakemake/results/resliced_images/anatomy4_resliced.img" ;
+        schema:sha256             "707bb33cc601979ea66a582d409cb065b56862d0b61999eee6c3ba81a3187158" .
 
-fmri:atlas-hdr  a        provone:Data ;
-        prov:label       "atlas.hdr" ;
-        schema:location  "~/github/fMRI_snakemake/results/softmean/atlas.hdr" ;
-        schema:sha256    "d381e02cd28085d1996729ae2de0ca760036993f4f6783806332486462c47835" .
+fmri:atlas-hdr  a                 provone:Data ;
+        prov:label                "atlas.hdr" ;
+        prov:qualifiedGeneration  _:b5 ;
+        schema:location           "~/github/fMRI_snakemake/results/softmean/atlas.hdr" ;
+        schema:sha256             "d381e02cd28085d1996729ae2de0ca760036993f4f6783806332486462c47835" .
 
-fmri:atlas-img  a        provone:Data ;
-        prov:label       "atlas.img" ;
-        schema:location  "~/github/fMRI_snakemake/results/softmean/atlas.img" ;
-        schema:sha256    "73bf1d5e1cb5cc70477bd44cc927538b61193c8cd8e246c120a58018257b0552" .
+fmri:atlas-img  a                 provone:Data ;
+        prov:label                "atlas.img" ;
+        prov:qualifiedGeneration  _:b4 ;
+        schema:location           "~/github/fMRI_snakemake/results/softmean/atlas.img" ;
+        schema:sha256             "73bf1d5e1cb5cc70477bd44cc927538b61193c8cd8e246c120a58018257b0552" .
 
 fmri:ch-alignWarpOut-resliceIn
         a           provone:Channel ;
@@ -622,8 +613,14 @@ fmri:convert  a                  provone:Program ;
         schema:downloadUrl       "https://legacy.imagemagick.org/script/download.php"^^schema:URL ;
         schema:softwareVersion   "6.9.10-23 Q16 x86_64 20190101"^^schema:Text .
 
-fmri:convert-exe  a  provone:Execution ;
-        prov:label  "convert execution" .
+fmri:convert-exe  a                provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:10.821+02:00" ;
+        prov:label                 "convert execution" ;
+        prov:qualifiedAssociation  _:b96 ;
+        prov:qualifiedUsage        _:b81 ;
+        prov:qualifiedUsage        _:b82 ;
+        prov:qualifiedUsage        _:b83 ;
+        prov:startTime             "2023-08-21T05:44:10.793+02:00" .
 
 fmri:convert-in  a             provone:Port ;
         prov:label             "Convert input" ;
@@ -635,20 +632,23 @@ fmri:convert-out  a            provone:Port ;
         schema:description     "Convert output port"^^schema:Text ;
         schema:encodingFormat  "image/gif"^^schema:Text .
 
-fmri:convert-x  a        provone:Data ;
-        prov:label       "atlas_x.gif" ;
-        schema:location  "~/github/fMRI_snakemake/results/slices/atlas_x.gif" ;
-        schema:sha256    "882fe0286e2fae0c5c1e9f3420bb7da6004a6900c96ef8f018c2c44a7c8b0a1a" .
+fmri:convert-x  a                 provone:Data ;
+        prov:label                "atlas_x.gif" ;
+        prov:qualifiedGeneration  _:b9 ;
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_x.gif" ;
+        schema:sha256             "882fe0286e2fae0c5c1e9f3420bb7da6004a6900c96ef8f018c2c44a7c8b0a1a" .
 
-fmri:convert-y  a        provone:Data ;
-        prov:label       "atlas_y.gif" ;
-        schema:location  "~/github/fMRI_snakemake/results/slices/atlas_y.gif" ;
-        schema:sha256    "a5ab1129f701f461fb54923563cd7cab9ba4071db1073144e3d51358dafd174d" .
+fmri:convert-y  a                 provone:Data ;
+        prov:label                "atlas_y.gif" ;
+        prov:qualifiedGeneration  _:b10 ;
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_y.gif" ;
+        schema:sha256             "a5ab1129f701f461fb54923563cd7cab9ba4071db1073144e3d51358dafd174d" .
 
-fmri:convert-z  a        provone:Data ;
-        prov:label       "atlas_z.gif" ;
-        schema:location  "~/github/fMRI_snakemake/results/slices/atlas_z.gif" ;
-        schema:sha256    "84f8d7c5580c15b6bf52ffe0cf8e1571041c4bc3eb4ce0978530a673d81a3828" .
+fmri:convert-z  a                 provone:Data ;
+        prov:label                "atlas_z.gif" ;
+        prov:qualifiedGeneration  _:b11 ;
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_z.gif" ;
+        schema:sha256             "84f8d7c5580c15b6bf52ffe0cf8e1571041c4bc3eb4ce0978530a673d81a3828" .
 
 fmri:felix  a            provone:User ;
         scoro:hasORCID   "0000-0003-0711-5196" ;
@@ -658,10 +658,20 @@ fmri:felix  a            provone:User ;
         foaf:homepage    "https://fbartusch.github.io/" ;
         foaf:mbox        "felix.bartusch[at]uni-tuebingen.de" .
 
-fmri:fmri-workflow  a       provone:Workflow ;
-        prov:label          "fMRI workflow" ;
-        schema:comment      "Implemenation of fMRI workflow used in the Provenance Challenges with Snakemake."^^schema:Text ;
-        schema:downloadUrl  "https://github.com/fbartusch/fMRI_snakemake"^^schema:URL .
+fmri:fmri-workflow  a             provone:Workflow ;
+        provone:hasSubProgram     _:b34 ;
+        provone:hasSubProgram     _:b35 ;
+        provone:hasSubProgram     _:b36 ;
+        provone:hasSubProgram     _:b37 ;
+        provone:hasSubProgram     _:b38 ;
+        prov:label                "fMRI workflow" ;
+        prov:qualifiedDerivation  _:b40 ;
+        schema:comment            "Implemenation of fMRI workflow used in the Provenance Challenges with Snakemake."^^schema:Text ;
+        schema:downloadUrl        "https://github.com/fbartusch/fMRI_snakemake"^^schema:URL .
+
+fmri:generation1  a    prov:Generation ;
+        prov:activity  fmri:align-warp-exe1 ;
+        prov:atTime    "2023-08-21T05:44:05.361+02:00"^^xsd:dateTime .
 
 fmri:inputFileCollection
         a           prov:Entity ;
@@ -692,14 +702,29 @@ fmri:reslice  a                  provone:Program ;
         schema:downloadUrl       "http://air.bmap.ucla.edu/AIR5/index.html"^^schema:URL ;
         schema:softwareVersion   "5.3.0"^^schema:Text .
 
-fmri:reslice-exe2  a  provone:Execution ;
-        prov:label  "reslice_execution_2" .
+fmri:reslice-exe1  prov:qualifiedAssociation  _:b90 ;
+        prov:qualifiedUsage        _:b66 .
 
-fmri:reslice-exe3  a  provone:Execution ;
-        prov:label  "reslice_execution_3" .
+fmri:reslice-exe2  a               provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:06.793+02:00" ;
+        prov:label                 "reslice_execution_2" ;
+        prov:qualifiedAssociation  _:b91 ;
+        prov:qualifiedUsage        _:b67 ;
+        prov:startTime             "2023-08-21T05:44:06.461+02:00" .
 
-fmri:reslice-exe4  a  provone:Execution ;
-        prov:label  "reslice_execution_4" .
+fmri:reslice-exe3  a               provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:06.461+02:00" ;
+        prov:label                 "reslice_execution_3" ;
+        prov:qualifiedAssociation  _:b92 ;
+        prov:qualifiedUsage        _:b68 ;
+        prov:startTime             "2023-08-21T05:44:06.137+02:00" .
+
+fmri:reslice-exe4  a               provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:07.117+02:00" ;
+        prov:label                 "reslice_execution_4" ;
+        prov:qualifiedAssociation  _:b93 ;
+        prov:qualifiedUsage        _:b69 ;
+        prov:startTime             "2023-08-21T05:44:06.797+02:00" .
 
 fmri:reslice-in  a          provone:Port ;
         prov:label          "Warp parameters input" ;
@@ -721,8 +746,13 @@ fmri:slicer  a                   provone:Program ;
         schema:downloadUrl       "https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation"^^schema:URL ;
         schema:softwareVersion   "3.5.3"^^schema:Text .
 
-fmri:slicer-exe  a  provone:Execution ;
-        prov:label  "slicer_execution" .
+fmri:slicer-exe  a                 provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:10.789+02:00" ;
+        prov:label                 "slicer_execution" ;
+        prov:qualifiedAssociation  _:b95 ;
+        prov:qualifiedUsage        _:b79 ;
+        prov:qualifiedUsage        _:b80 ;
+        prov:startTime             "2023-08-21T05:44:08.525+02:00" .
 
 fmri:slicer-in-hdr  a       provone:Port ;
         prov:label          "Slicer hdr input" ;
@@ -737,20 +767,23 @@ fmri:slicer-out  a             provone:Port ;
         schema:description     "Slicer output in pgm format"^^schema:Text ;
         schema:encodingFormat  "image/x-portable-greymap"^^schema:Text .
 
-fmri:slicer-x  a         provone:Data ;
-        prov:label       "atlas_x.pgm" ;
-        schema:location  "~/github/fMRI_snakemake/results/slices/atlas_x.pgm" ;
-        schema:sha256    "31499fcfc4e3100c46fb24f912cf8f3c008a36f80a277fde5e702f75e6cf38a8" .
+fmri:slicer-x  a                  provone:Data ;
+        prov:label                "atlas_x.pgm" ;
+        prov:qualifiedGeneration  _:b6 ;
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_x.pgm" ;
+        schema:sha256             "31499fcfc4e3100c46fb24f912cf8f3c008a36f80a277fde5e702f75e6cf38a8" .
 
-fmri:slicer-y  a         provone:Data ;
-        prov:label       "atlas_y.pgm" ;
-        schema:location  "~/github/fMRI_snakemake/results/slices/atlas_y.pgm" ;
-        schema:sha256    "54c8eee603bcfd86d7816f7a5e399fb5abd434540fdfe95b2f1f81da4a0cf47c" .
+fmri:slicer-y  a                  provone:Data ;
+        prov:label                "atlas_y.pgm" ;
+        prov:qualifiedGeneration  _:b7 ;
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_y.pgm" ;
+        schema:sha256             "54c8eee603bcfd86d7816f7a5e399fb5abd434540fdfe95b2f1f81da4a0cf47c" .
 
-fmri:slicer-z  a         provone:Data ;
-        prov:label       "atlas_z.pgm" ;
-        schema:location  "~/github/fMRI_snakemake/results/slices/atlas_z.pgm" ;
-        schema:sha256    "5a5254e7c6ac1a91c76e881defe75a878ffb403f12173055afa5eb22a8e71275" .
+fmri:slicer-z  a                  provone:Data ;
+        prov:label                "atlas_z.pgm" ;
+        prov:qualifiedGeneration  _:b8 ;
+        schema:location           "~/github/fMRI_snakemake/results/slices/atlas_z.pgm" ;
+        schema:sha256             "5a5254e7c6ac1a91c76e881defe75a878ffb403f12173055afa5eb22a8e71275" .
 
 fmri:snakemake  a               provone:Controller ;
         prov:label              "snakemake" ;
@@ -766,8 +799,19 @@ fmri:softmean  a                 provone:Program ;
         schema:downloadUrl       "http://air.bmap.ucla.edu/AIR5/index.html"^^schema:URL ;
         schema:softwareVersion   "5.3.0"^^schema:Text .
 
-fmri:softmean-exe  a  provone:Execution ;
-        prov:label  "softmean_execution" .
+fmri:softmean-exe  a               provone:Execution ;
+        prov:endTime               "2023-08-21T05:44:08.525+02:00" ;
+        prov:label                 "softmean_execution" ;
+        prov:qualifiedAssociation  _:b94 ;
+        prov:qualifiedUsage        _:b70 ;
+        prov:qualifiedUsage        _:b71 ;
+        prov:qualifiedUsage        _:b72 ;
+        prov:qualifiedUsage        _:b73 ;
+        prov:qualifiedUsage        _:b74 ;
+        prov:qualifiedUsage        _:b75 ;
+        prov:qualifiedUsage        _:b77 ;
+        prov:qualifiedUsage        _:b78 ;
+        prov:startTime             "2023-08-21T05:44:07.449+02:00" .
 
 fmri:softmean-in-hdr  a     provone:Port ;
         prov:label          "Softmean hdr input" ;
@@ -787,25 +831,34 @@ fmri:softmean-out-img
         prov:label          "Softmean img output" ;
         schema:description  "Output port for NIfTI files: img part"^^schema:Text .
 
-fmri:warp-file1  a       provone:Data ;
-        prov:label       "anatomy1.warp" ;
-        schema:location  "~/github/fMRI_snakemake/results/warp_files/anatomy1.warp" ;
-        schema:sha256    "b891d3b87bcf8ec9c4d4e9f481468e9a2acfda255e61e7f72706a3aea29db293" .
+fmri:warp-file1  a                provone:Data ;
+        prov:label                "anatomy1.warp" ;
+        prov:qualifiedGeneration  _:b97 ;
+        prov:qualifiedGeneration  fmri:generation1 ;
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy1.warp" ;
+        schema:sha256             "b891d3b87bcf8ec9c4d4e9f481468e9a2acfda255e61e7f72706a3aea29db293" .
 
-fmri:warp-file2  a       provone:Data ;
-        prov:label       "anatomy2.warp" ;
-        schema:location  "~/github/fMRI_snakemake/results/warp_files/anatomy2.warp" ;
-        schema:sha256    "c083a225db55828179cb92387f1fb75b963f5b013e4f762ef432030836fae7bc" .
+fmri:warp-file2  a                provone:Data ;
+        prov:label                "anatomy2.warp" ;
+        prov:qualifiedGeneration  _:b99 ;
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy2.warp" ;
+        schema:sha256             "c083a225db55828179cb92387f1fb75b963f5b013e4f762ef432030836fae7bc" .
 
-fmri:warp-file3  a       provone:Data ;
-        prov:label       "anatomy3.warp" ;
-        schema:location  "~/github/fMRI_snakemake/results/warp_files/anatomy3.warp" ;
-        schema:sha256    "074f3ddfa1dd2b10c3736f32c716fe5a59871957c69966cd9f25d6760b5f9fea" .
+fmri:warp-file3  a                provone:Data ;
+        prov:label                "anatomy3.warp" ;
+        prov:qualifiedGeneration  _:b100 ;
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy3.warp" ;
+        schema:sha256             "074f3ddfa1dd2b10c3736f32c716fe5a59871957c69966cd9f25d6760b5f9fea" .
 
-fmri:warp-file4  a       provone:Data ;
-        prov:label       "anatomy4.warp" ;
-        schema:location  "~/github/fMRI_snakemake/results/warp_files/anatomy4.warp" ;
-        schema:sha256    "5ac417afc592ce434c2b236623c5145d4daac0c0c304af1a9baa974834524d88" .
+fmri:warp-file4  a                provone:Data ;
+        prov:label                "anatomy4.warp" ;
+        prov:qualifiedGeneration  _:b101 ;
+        schema:location           "~/github/fMRI_snakemake/results/warp_files/anatomy4.warp" ;
+        schema:sha256             "5ac417afc592ce434c2b236623c5145d4daac0c0c304af1a9baa974834524d88" .
 
-fmri:wf-execution  a  provone:Execution ;
-        prov:label  "workflow_execution" .
+fmri:wf-execution  a               prov:Activity ;
+        prov:endTime               "2023-08-21T05:44:10.821+02:00" ;
+        prov:label                 "workflow_execution" ;
+        prov:qualifiedAssociation  _:b56 ;
+        prov:qualifiedAssociation  _:b84 ;
+        prov:startTime             "2023-08-21T05:44:05.105+02:00" .

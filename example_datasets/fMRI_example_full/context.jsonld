@@ -55,7 +55,7 @@
 			}
 		},
 
-		"Delegation": {
+		"prov:Delegation": {
 			"@id": "prov:Delegation",
 			"@context": {
 				"responsible": {
@@ -74,7 +74,7 @@
 			}
 		},
 
-		"Usage": {
+		"prov:Usage": {
 			"@id": "prov:Usage",
 			"@context": {
 				"activity": {
@@ -89,7 +89,7 @@
 			}
 		},
 
-		"Generation": {
+		"prov:Generation": {
 			"@id": "prov:Generation",
 			"@context": {
 				"entity": {
@@ -104,7 +104,7 @@
 			}
 		},
 
-		"Invalidation": {
+		"prov:Invalidation": {
 			"@id": "prov:Invalidation",
 			"@context": {
 				"entity": {
@@ -119,7 +119,7 @@
 			}
 		},
 
-		"Attribution": {
+		"prov:Attribution": {
 			"@id": "prov:Attribution",
 			"@context": {
 				"entity": {
@@ -130,7 +130,7 @@
 
 		},
 
-		"Association": {
+		"prov:Association": {
 			"@id": "prov:Association",
 			"@context": {
 				"activity": {
@@ -144,7 +144,7 @@
 			}
 		},
 
-		"Communication": {
+		"prov:Communication": {
 			"@id": "prov:Communication",
 			"@context": {
 				"informed": {
@@ -158,7 +158,7 @@
 			}
 		},
 
-		"Influence": {
+		"prov:Influence": {
 			"@id": "prov:Influence",
 			"@context": {
 				"influencee": {
@@ -172,7 +172,7 @@
 			}
 		},
 
-		"Derivation": {
+		"prov:Derivation": {
 			"@id": "prov:Derivation",
 			"@context": {
 				"generatedEntity": {
