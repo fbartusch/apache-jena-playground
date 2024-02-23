@@ -175,7 +175,7 @@ sudo docker run \
 04:45:31 INFO  loader          :: Finish - index POS
 ```
 
-Start the Fuseki server using and expose the database read-only:
+Start the Fuseki server and expose the database read-only:
 
 ```
 cd docker/jena-fuseki-docker-4.9.0
@@ -193,6 +193,8 @@ sudo docker compose up
 [2023-12-06 05:31:29] INFO  Server          ::   PID:    1
 [2023-12-06 05:31:29] INFO  Server          :: Start Fuseki (http=3030)
 ```
+
+For writing to the database, use the `--update` flag.
 
 ### Interact with the Fuseki server
 

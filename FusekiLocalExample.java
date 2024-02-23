@@ -2,41 +2,69 @@
  * 
  * Fuseki playground
  * 
+ * Interact with a running Fuseki Server on localhost
  * 
  */
  
-import org.apache.jena.graph.Graph;
-import org.apache.jena.query.Dataset;
-import org.apache.jena.query.Query;
-import org.apache.jena.query.QueryExecution;
-import org.apache.jena.query.QueryFactory;
-import org.apache.jena.query.ResultSetFormatter;
-import org.apache.jena.query.ResultSetRewindable;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdfconnection.RDFConnection;
 import org.apache.jena.rdfconnection.RDFConnectionFuseki;
-import org.apache.jena.rdfconnection.RDFConnectionRemoteBuilder;
 import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFParser;
-import org.apache.jena.sparql.core.DatasetGraph;
-import org.apache.jena.sparql.core.DatasetGraphFactory;
-import org.apache.jena.sparql.core.DatasetImpl;
-import org.apache.jena.sparql.graph.GraphFactory;
+import org.apache.jena.riot.RDFDataMgr;
 
-public class fuseki {
+public class FusekiLocalExample {
     public static void main(String[] args) {
-        // Get fMRI provenance data into Fuseki Triplestore
+
+        // Example models
+        Model exampleCluster = ExampleData.createCluster();
+        Model exampleJobs1 = ExampleData.createJobs("testUser1", 3);
+        Model exampleJobs2 = ExampleData.createJobs("testUser2", 4);
+        Model exampleExecution = ExampleData.createExampleExecution();
+
+        // Add models as named graph to local Fuseki server
         // see: https://jena.apache.org/documentation/rdfconnection/
         // see: https://github.com/apache/jena/blob/main/jena-examples/src/main/java/rdfconnection/examples/RDFConnectionExample6.java
         // see: https://stackoverflow.com/questions/55865903/is-there-a-way-to-upload-a-ttl-file-to-fuseki-programatically
 
-        RDFConnectionRemoteBuilder builder = RDFConnectionFuseki.create()
-            .destination("http://localhost:3030/NAME/");
+        String port = "3030";
+        String dataset = "ds";
+        String destination = "http://localhost:" + port + "/" + dataset + "/";
 
-        // In this variation, a connection is built each time. 
-        try ( RDFConnectionFuseki conn = (RDFConnectionFuseki)builder.build() ) {
+        // Add example models to named graphs
+
+        // Add example cluster
+        try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
             // Load (add, append) RDF into a named graph in a dataset
-            conn.load(null, "fmri_provenance.ttl");
+            conn.load(destination + "cluster", exampleCluster);
         }
 
+        try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
+            // Load (add, append) RDF into a named graph in a dataset
+            conn.load(destination + "user1_jobs", exampleJobs1);
+        }
+
+        try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
+            // Load (add, append) RDF into a named graph in a dataset
+            conn.load(destination + "user2_jobs", exampleJobs2);
+        }
+
+        try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
+            // Load (add, append) RDF into a named graph in a dataset
+            conn.load(destination + "user1_executions", exampleExecution);
+        }
+
+
+        // Sanity Test: Get data from named graphs
+        try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
+            // Load (add, append) RDF into a named graph in a dataset
+            Model m = conn.fetch(destination + "cluster");
+            RDFDataMgr.write(System.out, m, Lang.TRIG);
+        }
+
+
+        // 
+
+        /*
         // Read JSON-LD 1.1 File created by ProvOneToolbox
         GraphFactory gf = new GraphFactory();
         Graph graph = gf.createJenaDefaultGraph();
@@ -87,5 +115,7 @@ public class fuseki {
             //rewindable.reset() ;
             //ResultSetFormatter.out(rewindable) ;
         }
+    }
+    */
     }
 }
