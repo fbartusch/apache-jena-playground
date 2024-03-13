@@ -72,7 +72,7 @@ class ExampleData {
 
 
     /**
-     * Retern a model that contains a number of jobs by a specific user
+     * Return a model that contains a number of jobs by a specific user
      */
     public static Model createJobs(String userName, int numJobs) {
         Model m = ModelFactory.createDefaultModel();
@@ -107,6 +107,4 @@ class ExampleData {
 
         return m;
     }
-
-
 }

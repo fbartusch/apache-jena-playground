@@ -20,7 +20,13 @@ services:
   fuseki:
     ## Example:
     # Updatable
-    command: [ "--tdb2", "--update", "--loc", "databases/DB2", "/ds" ]
+    #command: [ "--tdb2", "--update", "--loc", "databases/DB2", "/ds" ]
+    # Without password protection
+    #command: [ "--conf", "configuration/endpoint.ttl" ]
+    # With endpoint ACLs
+    #command: [ "--conf", "configuration/endpoint_acls.ttl", "--passwd", "passwords"]
+    # With graph ACLs
+    command: [ "--conf", "configuration/graph_acls.ttl" ]
     # Read-only
     #command: [ "--loc", "databases/DB2", "/ds" ]
     build:
@@ -30,6 +36,7 @@ services:
     ports:
       - "3030:3030"
     volumes:
+      - ./passwords:/fuseki/passwords
+      - ./configuration:/fuseki/configuration
       - ./logs:/fuseki/logs
       - ./databases:/fuseki/databases
-#volumes:

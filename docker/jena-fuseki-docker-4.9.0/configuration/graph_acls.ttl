@@ -1,0 +1,62 @@
+## Licensed under the terms of http://www.apache.org/licenses/LICENSE-2.0
+
+PREFIX :        <#>
+PREFIX fuseki:  <http://jena.apache.org/fuseki#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ja:      <http://jena.hpl.hp.com/2005/11/Assembler#>
+PREFIX tdb2:    <http://jena.apache.org/2016/tdb#>
+PREFIX access:  <http://jena.apache.org/access#>
+
+[] rdf:type fuseki:Server ;
+
+    fuseki:passwd  "passwords" ;
+    fuseki:auth    "basic" ;
+
+   fuseki:services (
+     :service
+   ) .
+
+
+
+## Service description for "/ds"
+## with a TDB2 dataset
+
+# This works with the FusekiLocalExample.java example in the repository
+# The code is able to load RDF data to and retrieve RDF data from named graphs
+
+:service rdf:type fuseki:Service ;
+    fuseki:name "ds" ;
+
+    fuseki:endpoint [
+        fuseki:operation fuseki:gsp-r ;
+    ] ;
+    fuseki:endpoint [ 
+        fuseki:operation fuseki:gsp-rw ;
+    ] ; 
+
+    fuseki:dataset :access_dataset ;
+    .
+
+# Define access on the dataset.
+<#access_dataset>  rdf:type access:AccessControlledDataset ;
+    access:registry   <#securityRegistry> ;
+    access:dataset    <#tdb_dataset_shared> ;
+    .
+
+# Graph Security Registry
+# There are the following graphs in this test:
+# - 'cluster': Hardware information of the cluster
+# - 'scheduler': Information about scheduled jobs
+<#securityRegistry> rdf:type access:SecurityRegistry ;
+    #access:entry ( "user1" <http://example/cluster> ) ;
+    access:entry [ access:user "user1" ; access:graphs <http://example/cluster> ] ;
+    access:entry ( "user1" <urn:x-arq:DefaultGraph> ) ;
+    .
+
+<#tdb_dataset_shared> rdf:type tdb2:DatasetTDB2 ;
+    tdb2:location "DB2" ;
+    ## Optional - with union default for query and update WHERE matching.
+    #tdb2:unionDefaultGraph true ;
+    .
+

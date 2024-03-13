@@ -1,0 +1,1 @@
+This directory contains prolog/epilog scripts for writing job information to a graph in Fuseki.

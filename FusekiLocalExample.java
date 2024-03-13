@@ -31,38 +31,38 @@ public class FusekiLocalExample {
         String destination = "http://localhost:" + port + "/" + dataset + "/";
 
         // Add example models to named graphs
-
-        // Add example cluster
+        /*
         try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
             // Load (add, append) RDF into a named graph in a dataset
             conn.load(destination + "cluster", exampleCluster);
         }
-
         try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
             // Load (add, append) RDF into a named graph in a dataset
             conn.load(destination + "user1_jobs", exampleJobs1);
         }
-
         try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
             // Load (add, append) RDF into a named graph in a dataset
             conn.load(destination + "user2_jobs", exampleJobs2);
         }
-
         try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
             // Load (add, append) RDF into a named graph in a dataset
             conn.load(destination + "user1_executions", exampleExecution);
         }
+        */
 
+        // Add example models to named graphs. Only a specific user is allowed writing this destination.
+        try ( RDFConnection conn = RDFConnection.connectPW(destination, "user1", "pw") ) {
+            // Load (add, append) RDF into a named graph in a dataset
+            conn.load("http://example/cluster2", exampleCluster);
+        }
 
         // Sanity Test: Get data from named graphs
-        try ( RDFConnection conn = RDFConnectionFuseki.connect(destination) ) {
+        try ( RDFConnection conn =RDFConnection.connectPW(destination, "user1", "pw2") ) {
             // Load (add, append) RDF into a named graph in a dataset
-            Model m = conn.fetch(destination + "cluster");
+            Model m = conn.fetch("http://example/cluster2");
             RDFDataMgr.write(System.out, m, Lang.TRIG);
         }
 
-
-        // 
 
         /*
         // Read JSON-LD 1.1 File created by ProvOneToolbox
