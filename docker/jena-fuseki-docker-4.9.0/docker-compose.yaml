@@ -24,9 +24,10 @@ services:
     # Without password protection
     #command: [ "--conf", "configuration/endpoint.ttl" ]
     # With endpoint ACLs
-    #command: [ "--conf", "configuration/endpoint_acls.ttl", "--passwd", "passwords"]
+    # command: [ "--conf", "configuration/endpoint_acls.ttl"]
+    command: [ "--conf", "configuration/endpoint_acls.ttl", "--passwd", "passwords"]
     # With graph ACLs
-    command: [ "--conf", "configuration/graph_acls.ttl" ]
+    #command: [ "--conf", "configuration/graph_acls.ttl" ]
     # Read-only
     #command: [ "--loc", "databases/DB2", "/ds" ]
     build:
@@ -37,6 +38,7 @@ services:
       - "3030:3030"
     volumes:
       - ./passwords:/fuseki/passwords
+      - ./log4j2.properties:/fuseki/log4j2.properties
       - ./configuration:/fuseki/configuration
       - ./logs:/fuseki/logs
       - ./databases:/fuseki/databases
