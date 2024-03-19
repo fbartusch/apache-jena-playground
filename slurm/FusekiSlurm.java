@@ -1,6 +1,10 @@
 package slurm;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Objects;
+import java.util.Properties;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -24,15 +28,34 @@ public class FusekiSlurm {
             runEpilog = true;
         }
         
+        
+        // TODO make this filename an option
+        String fileName = "/var/home/slurm/connection.conf";
+        Properties prop = new Properties();
+        try (FileInputStream fis = new FileInputStream(fileName)) {
+            prop.load(fis);
+        } catch (FileNotFoundException ex) {
+            System.out.println("FileNotFoundException");
+        } catch (IOException ex) {
+            System.out.println("IOException");
+        }
+
+        System.out.println(prop.getProperty("fuseki.server"));
+        System.out.println(prop.getProperty("fuseki.port"));
+        System.out.println(prop.getProperty("fuseki.dataset"));
+        System.out.println(prop.getProperty("fuseki.user"));
+        System.out.println(prop.getProperty("fuseki.pw"));
+
+
         // Fuseki connection details
         // TODO Don't hard code but read from a file
-        String host = "172.20.10.23";
-        String port = "3030";
-        String dataset = "ds";
+        String host = prop.getProperty("fuseki.server");
+        String port = prop.getProperty("fuseki.port");
+        String dataset = prop.getProperty("fuseki.dataset");
         String destination = "http://" + host + ":" + port + "/" + dataset + "/";
-        
-        String user = "user1";
-        String pw = "pw";
+
+        String user = prop.getProperty("fuseki.user");
+        String pw = prop.getProperty("fuseki.pw");
 
         // This model will hold the job information
         Model m = ModelFactory.createDefaultModel();
