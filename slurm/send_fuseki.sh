@@ -15,12 +15,14 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+HOSTNAMES=$(scontrol show hostnames ${SLURM_JOB_NODELIST} | paste -sd,)
+
 if [ "${KEY}" = "prolog" ]; then
-  java -jar /var/home/slurm/FusekiSlurm.jar prolog
+  java -jar /var/home/slurm/FusekiSlurm.jar --prolog --hostnames ${HOSTNAMES}
   exit 0
 fi
 
 if [ "${KEY}" = "epilog" ]; then
-  java -jar /var/home/slurm/FusekiSlurm.jar epilog
+  java -jar /var/home/slurm/FusekiSlurm.jar --epilog
   exit 0
 fi
